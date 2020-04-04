@@ -2,15 +2,15 @@
     position: absolute;
     display: flex;
     justify-content:space-between;
-    right: 23px;
-    top: 15px;
-    width: 120px;
-    height: 25px;
+    right: .185rem;
+    top: .25rem;
+    width: 2.25rem;
+    height: .5rem;
 }
 .ref-item {
-    width: 52px;
+    width: .975rem;
     cursor: pointer;
-    font:16px/25px "黑体";
+    font:.3rem/.5rem "黑体";
     text-align: center;
     color: #fff;
     background-color: #6d6d64;

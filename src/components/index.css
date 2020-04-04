@@ -1,10 +1,11 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 .w {
     margin: 0 auto;
-    width: 1150px;
+    width: 21.5rem;
     position: relative;
 }
 ul {

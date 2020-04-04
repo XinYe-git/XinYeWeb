@@ -6,7 +6,7 @@ export default class reg extends Component {
         return (
             <div className='ref-button'>
                 <Link className="ref-item" to={window.location.pathname+'/signIn'}>登录</Link>
-                <Link className="ref-item" to={window.location.pathname+'/register'}>注册</Link>
+                <Link className="ref-item" to='/register' target='_blank'>注册</Link>
             </div>
         )
     }

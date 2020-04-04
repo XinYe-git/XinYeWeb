@@ -1,0 +1,13 @@
+.main-title-1,.main-title-2 {
+    text-align: center;
+    color: #000;
+}
+.main-title-1{
+    margin-bottom: .025rem;
+    font: .375rem "隶书";
+}
+.main-title-2{
+    margin-bottom: .1875rem;
+    font: .225rem "黑体";
+    letter-spacing: 2px;
+}
