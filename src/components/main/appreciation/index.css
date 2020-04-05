@@ -1,4 +1,5 @@
 .appreciation{
+    position: relative;
     margin-top: .25rem;
 }
 .appreciation-show {
@@ -19,4 +20,19 @@
     margin-top: .1875rem;
     text-align: center;
     font:.3rem "宋体";
+}
+.more{
+    position: absolute;
+    right:  0;
+    bottom: -0.6rem;
+    cursor: pointer;
+}
+.more-img{
+    width: .25rem;
+    height: .25rem;
+    vertical-align: middle;
+}
+.more-words {
+    font: .25rem "黑体";
+    vertical-align: middle;
 }
