@@ -4,10 +4,28 @@
     height: 5.625rem;
     cursor: pointer;
     background-color: #fff;
-    background-image: url('./banner.png');
+    overflow: hidden;
+}
+.banner-inner{
+    height: 100%;
+    transition-property: margin-left; 
+    transition-timing-function: linear;
+}
+.banner-inner>a{
+    display: block;
+    float: left;
+    height: 100%;
+    width: 25%;
+}
+.banner1,.banner2,.banner3{
+    height: 100%;
+    width: 100%;
     background-size: cover;
     background-position: center;
 }
+.banner1 {background-image: url('./banner1.png');}
+.banner2 {background-image: url('./banner2.png');}
+.banner3 {background-image: url('./banner3.png');}
 .banner-left{
     position: absolute;
     left: .5rem;
