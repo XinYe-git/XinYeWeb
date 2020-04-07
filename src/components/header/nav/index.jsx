@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom'
 import './index.css'
+import VisitNav from "./visitNav"
 export default class nav extends Component {
     render() {
         return (
             <ul className='nav clearfix'>
-                <li><NavLink to='/main' className='nav-item' activeClassName='nav-item-active' target='_blank'>首页</NavLink></li>
-                <li><NavLink to='/visit' className='nav-item' activeClassName='nav-item-active' target='_blank'>走进新叶</NavLink></li>
-                <li><NavLink to='/show' className='nav-item' activeClassName='nav-item-active' target='_blank'>案例展示</NavLink></li>
-                <li><NavLink to='/business' className='nav-item' activeClassName='nav-item-active' target='_blank'>主要业务</NavLink></li>
-                <li><NavLink to='/service' className='nav-item' activeClassName='nav-item-active' target='_blank'>联系我们</NavLink></li>
+                <li className='nav-item'><NavLink to='/main'  activeClassName='nav-item-active' target='_blank'>首页</NavLink></li>
+                <li className='nav-item'><NavLink to='/visit'  activeClassName='nav-item-active' target='_blank'>走进新叶</NavLink><VisitNav/></li>
+                <li className='nav-item'><NavLink to='/show'  activeClassName='nav-item-active' target='_blank'>案例展示</NavLink></li>
+                <li className='nav-item'><NavLink to='/business'  activeClassName='nav-item-active' target='_blank'>主要业务</NavLink></li>
+                <li className='nav-item'><NavLink to='/service'  activeClassName='nav-item-active' target='_blank'>联系我们</NavLink></li>
             </ul>
         )
     }

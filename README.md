@@ -1,4 +1,4 @@
-已安装`react-router-dom`,`react-app-rewired`,`customize-cra`,`redux`,`axious`这些额外包。  
+已安装`react-router-dom`,`react-app-rewired`,`customize-cra`,`redux`,`axios`这些额外包。  
 > 每次`git pull`的时候可能需要输入`npm install`重新配置才能`npm start`
 # 路由
 + /main:主页（基本完成）
