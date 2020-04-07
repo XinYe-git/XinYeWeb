@@ -1,0 +1,78 @@
+.introduction{
+    margin: 0 auto;
+    width: 15.875rem;
+}
+.introductionItem-outer{
+    margin-bottom: 2rem;
+}
+.introductionItem{
+    margin-top: .6875rem;
+}
+.introduction-item-title{
+    position: relative;
+    margin-bottom: .4375rem;
+    font: .45rem "黑体";
+    font-weight: bold;
+    color: #b68888;
+    text-align: center;
+    letter-spacing: .0625rem;
+}
+.introduction-item-title::after{
+    position: absolute;
+    top: .1rem;
+    left: 3.1rem;
+    content: "";
+    display: block;
+    width: .85rem;
+    height: .375rem;
+    background-image: url("./ye.png");
+    background-size: contain;
+}
+.introduction-item-title::before{
+    position: absolute;
+    top: .1rem;
+    right: 3.1rem;
+    content: "";
+    display: block;
+    width: .85rem;
+    height: .375rem;
+    background-image: url("./ye.png");
+    background-size: contain;
+    transform: rotate(180deg); 
+}
+.introduction-item-words {
+    font: .3rem "黑体";
+    color: #595353;
+    text-indent: .775rem;
+    letter-spacing: .0625rem;
+    line-height: .45rem;
+}
+.introduction-style{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.introduction-style-item{
+    width: 5.1375rem;
+}
+.introduction-style-item-img1,.introduction-style-item-img2,.introduction-style-item-img3{
+    width: 5.1375rem;
+    height: 3.2875rem;
+    background-size: contain;
+}
+.introduction-style-item-words{
+    font: .225rem "黑体";
+    color: #000;
+    text-indent: .5rem;
+    letter-spacing: .0625rem;
+    line-height: .35rem;
+}
+.introduction-style-item-img1 {
+    background-image: url("./style1.png");
+}
+.introduction-style-item-img2 {
+    background-image: url("./style2.png");
+}
+.introduction-style-item-img3 {
+    background-image: url("./style3.png");
+}
