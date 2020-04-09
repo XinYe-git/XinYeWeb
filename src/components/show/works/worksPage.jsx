@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-export default class newsPage extends Component {
+export default class worksPage extends Component {
     constructor(){
         super()
         this.page=1

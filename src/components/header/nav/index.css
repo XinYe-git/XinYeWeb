@@ -46,3 +46,6 @@
 .nav-item:hover>.visitNav{
     height: 1.95rem;
 }
+.nav-item:hover>.showNav{
+    height: 1.95rem;
+}

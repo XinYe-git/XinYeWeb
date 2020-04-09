@@ -21,3 +21,37 @@ a {
 	Clear:both;
 }
 .clearfix{zoom:1;}
+/* 标题的格式 */
+.news-title,.introduction-title,.join-title,.works-title,.PreviousOffice-title,.PreviousWebsite-title {
+    width: 100%;
+    height: .45rem;
+    font: .45rem  "黑体" ;
+    font-weight: bold;
+    color: #ccce48;
+    text-align: center;
+    letter-spacing: .0625rem;
+}
+/* 页码的格式 */
+.Page {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    height: .5rem;
+    width: 9.775rem;
+}
+.Page>li>a{
+    display: block;
+    width: .45rem;
+    height: .45rem;
+    font: .25rem "黑体";
+    font-weight: bold;
+    line-height: .45rem;
+    text-align: center;
+    border: 2px solid #84bcf0;
+}
+.More{
+    padding: 0 0 2px 0;
+}
+.PageNow{
+    background-color: #59f577;
+}

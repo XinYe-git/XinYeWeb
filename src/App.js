@@ -5,6 +5,7 @@ import {
     Banner,
     Main,
     Visit,
+    Show,
     Footer
 } from './components'
 export default class App extends Component {
@@ -16,7 +17,7 @@ export default class App extends Component {
                 <Switch>
                     <Route path='/main'  component={Main}/>
                     <Route path='/visit' component={Visit}/>
-                    <Route path='/show' />
+                    <Route path='/show' component={Show}/>
                     <Route path='/business' />
                     <Route path='/service' />
                     <Route path='/register' />
