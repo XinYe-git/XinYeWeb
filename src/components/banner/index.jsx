@@ -55,12 +55,12 @@ export default class banner extends Component {
         })
         clearInterval(this.Interval)
         this.Interval=setInterval(this.bannerRight.bind(this),5000)
-        this.banner.addEventListener("mouseover",()=>{
+        this.bannerOut.addEventListener("mouseover",()=>{
             clearInterval(this.Interval)
             this.bannerL.classList.toggle("banner-opacity")
             this.bannerR.classList.toggle("banner-opacity")
         })
-        this.banner.addEventListener("mouseout",()=>{
+        this.bannerOut.addEventListener("mouseout",()=>{
             this.Interval=setInterval(this.bannerRight.bind(this),5000)
             this.bannerL.classList.toggle("banner-opacity")
             this.bannerR.classList.toggle("banner-opacity")
@@ -69,7 +69,7 @@ export default class banner extends Component {
     
     render() {
         return (
-            <div className='banner'>
+            <div className='banner' ref={dom=>this.bannerOut=dom}>
                 <div className="banner-inner clearfix" ref={dom=>this.banner=dom} >
                     <a href="/"><div className="banner1"></div></a>
                     <a href="/"><div className="banner2"></div></a>
