@@ -5,32 +5,46 @@ export default class banner extends Component {
         super()
         this.bannerIndex=1
         this.marginLeftNow=0
+        this.flag=true
+        this.Interval=""
     }
     bannerLeft(){
-        if(this.bannerIndex===1){
-            this.banner.style.transitionDuration= 0+"ms";
-            this.bannerIndex=4
-            this.marginLeftNow=-25.2*(this.banner.children.length-1)
-            this.banner.style.marginLeft=this.marginLeftNow+"rem"
+        if(this.flag){
+            this.flag=false
+            clearInterval(this.Interval)
+            if(this.bannerIndex===1){
+                this.banner.style.transitionDuration= 0+"ms";
+                this.bannerIndex=4
+                this.marginLeftNow=-25.2*(this.banner.children.length-1)
+                this.banner.style.marginLeft=this.marginLeftNow+"rem"
+            }
+            setTimeout(()=>{
+                this.banner.style.transitionDuration= 300+"ms";
+                this.bannerIndex--
+                this.marginLeftNow=-25.5*(this.bannerIndex-1)
+                this.banner.style.marginLeft=this.marginLeftNow+"rem"
+                this.flag=true
+                this.Interval=setInterval(this.bannerRight.bind(this),5000)
+            },10)
         }
-        setTimeout(()=>{
-            this.banner.style.transitionDuration= 300+"ms";
-            this.bannerIndex--
-            this.marginLeftNow=-25.5*(this.bannerIndex-1)
-            this.banner.style.marginLeft=this.marginLeftNow+"rem"
-        },10)
     }
     bannerRight(){
-        this.banner.style.transitionDuration= 300+"ms";
-        this.marginLeftNow=-25.3*this.bannerIndex
-        this.bannerIndex++
-        this.banner.style.marginLeft=this.marginLeftNow+"rem"
-        if(this.bannerIndex===this.banner.children.length){
-            setTimeout(()=>{
-                this.banner.style.transitionDuration= 0+"ms";
-                this.bannerIndex=1
-                this.banner.style.marginLeft=this.marginLeftNow=0
-            },300)
+        if(this.flag){
+            this.flag=false
+            clearInterval(this.Interval)
+            this.banner.style.transitionDuration= 300+"ms";
+            this.marginLeftNow=-25.3*this.bannerIndex
+            this.bannerIndex++
+            this.banner.style.marginLeft=this.marginLeftNow+"rem"
+            if(this.bannerIndex===this.banner.children.length){
+                setTimeout(()=>{
+                    this.banner.style.transitionDuration= 0+"ms";
+                    this.bannerIndex=1
+                    this.banner.style.marginLeft=this.marginLeftNow=0
+                },300)
+            }
+            this.flag=true
+            this.Interval=setInterval(this.bannerRight.bind(this),5000)
         }
     }
     componentDidMount(){
@@ -39,6 +53,8 @@ export default class banner extends Component {
         window.addEventListener("resize",()=>{
             this.banner.style.transitionDuration= 0+"ms";
         })
+        clearInterval(this.Interval)
+        this.Interval=setInterval(this.bannerRight.bind(this),5000)
     }
     render() {
         return (

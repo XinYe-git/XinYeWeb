@@ -6,7 +6,8 @@ import {
     Main,
     Visit,
     Show,
-    Footer
+    Footer,
+    SignIn
 } from './components'
 export default class App extends Component {
     render() {
@@ -23,8 +24,8 @@ export default class App extends Component {
                     <Route path='/register' />
                     <Redirect exact from="/" to="/main"/>
                 </Switch>
-                <Route path='/signIn' />
-                <Footer />
+                <Footer/>
+                <SignIn />
             </>
         )
     }
