@@ -1,0 +1,48 @@
+.centlay{
+    margin: 0 auto;
+}
+img{
+    border: none;
+    vertical-align: middle;
+}
+.BusFirst{
+    display: block;
+    height: .5625rem;
+    text-align: center;
+    font:.3rem/1.125rem "黑体";
+    margin-top: .25rem;
+    line-height: normal;
+}
+.BusSpan{
+    padding: .1rem  .15rem .125rem;
+    background-color: #c4a0a0;
+    border-radius: .125rem .125rem   0 0;
+}
+.BusImgBox{
+    display: flex;
+    margin-top: .3rem;
+    width: 16.25rem;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f86363; */
+}
+.BusImgItme{
+    width: 20%;
+    text-align: center;
+    
+}
+.BusImgItme > .blogImg{
+    width: 2.25rem;
+    height: 1.5rem;
+    margin-top: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+.BusImgItme > img {
+    width: 2.25rem;
+    height: 1.8rem;
+}
+.BusImgItme  .ItmeScript{
+    margin-top: .2rem;
+    font:.25rem/1.125rem "黑体";
+    line-height: .25rem;
+}
