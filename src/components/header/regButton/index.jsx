@@ -6,18 +6,13 @@ export default class reg extends Component {
         super()
         this.signIn={}
     }
-    setSignIn(){
-        var to=""
-        window.location.pathname==="/"?
-        to="/main/signIn"
-        :
-        to=window.location.pathname+"/signIn"
-        return to
+    toggle(){
+        document.querySelector(".signIn").classList.toggle("signIn-none")
     }
     render() {
         return (
             <div className='ref-button'>
-                <Link className="ref-item" to={this.setSignIn()}>登录</Link>
+                <div className="ref-item" onClick={this.toggle}>登录</div>
                 <Link className="ref-item" to='/register' target='_blank'>注册</Link>
             </div>
         )

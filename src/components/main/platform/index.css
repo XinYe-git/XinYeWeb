@@ -6,6 +6,7 @@
     justify-content:space-around;
 }
 .platform-item{
+    position: relative;
     padding: 0 .025rem;
     width: 3.45rem;
     height: 4.125rem;
@@ -34,4 +35,21 @@
 }
 .platform-item:hover {
     background-color: #c2c7c4;
+}
+.platform-button {
+    position: absolute;
+    bottom: .125rem;
+    left: 50%;
+    transform: translate(-50%,0);
+    cursor: pointer;
+    width: 1.225rem;
+    height: .4625rem;
+    font: .225rem/.4625rem "黑体";
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #749a01;
+    text-align: center;
+    background: linear-gradient(180deg,#fde288,#dec368);
+    box-shadow: 0rem -0.0515rem .15rem 0 #dbdbdb;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axious from 'axios'
+// import axious from 'axios'
 import NewsItem from "./newsItem"
 import NewsPage from "./newsPage"
 import './index.css'

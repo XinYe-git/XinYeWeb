@@ -50,7 +50,7 @@ a {
     border: 2px solid #84bcf0;
 }
 .More{
-    padding: 0 0 2px 0;
+    line-height: .3rem!important;
 }
 .PageNow{
     background-color: #59f577;
