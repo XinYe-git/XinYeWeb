@@ -1,5 +1,6 @@
 .centlay{
     margin: 0 auto;
+    font:.3rem/1.125rem "黑体";
 }
 img{
     border: none;
@@ -10,13 +11,14 @@ img{
     height: .5625rem;
     text-align: center;
     font:.3rem/1.125rem "黑体";
-    margin-top: .25rem;
+    margin-top: .4rem;
     line-height: normal;
 }
 .BusSpan{
     padding: .1rem  .15rem .125rem;
+    font-weight: 600;
     background-color: #c4a0a0;
-    border-radius: .125rem .125rem   0 0;
+    border-radius: .130rem .130rem   0 0;
 }
 .BusImgBox{
     display: flex;
@@ -24,7 +26,6 @@ img{
     width: 16.25rem;
     justify-content: center;
     align-items: center;
-    /* background-color: #f86363; */
 }
 .BusImgItme{
     width: 20%;
@@ -45,4 +46,5 @@ img{
     margin-top: .2rem;
     font:.25rem/1.125rem "黑体";
     line-height: .25rem;
+    font-weight: 600;
 }

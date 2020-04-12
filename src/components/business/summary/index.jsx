@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './main.css'
+import '../main.css'
 export default class business extends Component {
     render() {
         return (
@@ -8,7 +8,7 @@ export default class business extends Component {
                 <div className='BusImgBox centlay'>
                     <div className='BusImgItme'>
                         <img  src={require("./company.png")} alt="公司企业官网开发"/>
-                        <p className='ItmeScript'>公司企业官网开发</p>
+                        <p className='ItmeScript'>公司/企业官网开发</p>
                     </div>
                     <div className='BusImgItme'>
                         <img  src={require("./modify.png")} alt="网店装修"/>

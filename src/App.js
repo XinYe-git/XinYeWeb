@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-
 import { Route, Redirect, Switch } from 'react-router-dom'
-
 import {
     Header,
     Banner,
@@ -15,16 +13,15 @@ export default class App extends Component {
                 <Header />
                 <Banner />
                 <Switch>
-                    <Route path='/main' />
+                    <Route path='/main'/>
                     <Route path='/visit' />
                     <Route path='/show' />
-                    <Route path='/business' />
-                    <Route path='/service' />
+                    <Route path='/business'  component={Business}  />
+                    <Route path='/service'  />
                     <Route path='/register' />
-                    <Redirect exact from="/" to="/business" />
+                    <Redirect exact from="/" to="/main" />
                 </Switch>
                 <Route path='/signIn' />
-                <Business />
                 <Footer />
             </>
         )
