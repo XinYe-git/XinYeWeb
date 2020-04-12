@@ -3,6 +3,7 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 import {
     Header,
     Banner,
+    Service,
     Footer
 } from './components'
 export default class App extends Component {
@@ -21,6 +22,7 @@ export default class App extends Component {
                     <Redirect exact from="/" to="/main" />
                 </Switch>
                 <Route path='/signIn' />
+                <Service />
                 <Footer />
             </>
         )

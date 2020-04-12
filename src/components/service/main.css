@@ -1,0 +1,48 @@
+.serCentlay{
+    margin: 0 auto;
+}
+.contactBox{
+    width: 20.25rem;
+    height: 15rem;
+    padding: 0 2.25rem;
+    background-color: #d2e0ea;
+    box-shadow: -0.0625rem  .25rem .1875rem #aaf4d2;
+}
+.contactTitle{
+    display: block;
+    font-size: .625rem;  
+    padding-bottom: .25rem; 
+    color: #4de75b;
+    position: relative;
+}
+.superFont{
+    display: block;
+    color: #000;
+    font-size: .435rem;
+    position: absolute;
+    top: -0.0625rem;
+}
+.contactMap{
+    font-family: "黑体";
+    position: relative;
+    height: 5.5rem;
+}
+.map{
+    display: block;
+    position: absolute;
+    top: .1875rem;
+    right: 0;
+    width: 8.125rem;
+    height: 5.25rem;
+}
+.contactDeta h2{
+    font-size: .4375rem;
+}
+.address{
+    font-size: .3rem;
+    color:#595555;
+    margin: .4375rem 0;
+}
+.Feedback{
+    margin-top: .625rem;
+}
