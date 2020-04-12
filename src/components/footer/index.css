@@ -1,0 +1,56 @@
+.footer{
+    margin-top: .725rem;
+    height: 2.75rem;
+    background-color: #000;
+}
+.footer-inner {
+    position: relative;
+}
+.footer-bd{
+    margin-left: .5rem;
+    padding-top: .375rem;
+    width: 18.1875rem;
+    display: flex;
+    justify-content:space-between;
+}
+.footer-bd-item-a,.footer-ft-item {
+    height: .375rem;
+    font: .25rem "黑体";
+    text-align: center;
+    color: #fff;
+}
+.footer-bd-item-a>img{
+    margin-right: .0625rem;
+    width: .1875rem;
+    height: .3rem;
+    vertical-align: middle;
+}
+.footer-bd-item-a>span {
+    vertical-align: middle;
+}
+.footer-ft{
+    padding: .8375rem 5rem 0;
+    display: flex;
+    justify-content:space-around;
+}
+.WeBoAndWeiXin {
+    position: absolute;
+    top: .45rem;
+    right: .475rem;
+}
+.WeBoAndWeiXin>a {
+    margin-right: .425rem;
+}
+.weixin,.weibo{
+    width: .35rem;
+    height: .3rem;
+}
+.OfficialAccounts{
+    position: absolute;
+    bottom: -0.1875rem;
+    right: 2.75rem;
+    width: 1rem;
+    height: 1rem;
+    background-image: url('./OfficialAccounts.png');
+    background-size: contain;
+}

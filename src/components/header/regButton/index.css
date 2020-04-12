@@ -1,0 +1,17 @@
+.ref-button{
+    position: absolute;
+    display: flex;
+    justify-content:space-between;
+    right: .185rem;
+    top: .25rem;
+    width: 2.25rem;
+    height: .5rem;
+}
+.ref-item {
+    width: .975rem;
+    cursor: pointer;
+    font:.3rem/.5rem "黑体";
+    text-align: center;
+    color: #fff;
+    background-color: #6d6d64;
+}

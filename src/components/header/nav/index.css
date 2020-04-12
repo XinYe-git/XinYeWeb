@@ -1,0 +1,15 @@
+.nav {
+    margin-left: 7.6rem;
+}
+.nav-item {
+    float: left;
+    padding: 0 .4625rem;
+    height: 1.125rem;
+    font:.3rem/1.125rem "黑体";
+    text-align: center;
+    color: #fff;
+}
+.nav-item-active {
+    background-color: #cdcb62;
+    box-shadow: 0 0 .125rem 0 #fff ;
+}
