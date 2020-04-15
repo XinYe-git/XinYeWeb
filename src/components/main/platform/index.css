@@ -1,0 +1,55 @@
+.platform {
+    margin-top: .25rem;
+}
+.platform-show{
+    display: flex;
+    justify-content:space-around;
+}
+.platform-item{
+    position: relative;
+    padding: 0 .025rem;
+    width: 3.45rem;
+    height: 4.125rem;
+    border-radius: .3125rem;
+    border: .025rem #9d9292 solid;
+    box-shadow: 0 .0625rem 0 .0375rem #9d9292;
+}
+.platform-item-header{
+    height: .625rem;
+    text-align: center;
+    font:.3rem/.625rem "宋体";
+    font-weight: bold;
+    letter-spacing: .0375rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+.platform-item-article{
+    height: 3.125rem;
+    font: .225rem/.4rem "等线";
+    text-overflow:ellipsis; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+}
+.platform-item:hover {
+    background-color: #c2c7c4;
+}
+.platform-button {
+    position: absolute;
+    bottom: .125rem;
+    left: 50%;
+    transform: translate(-50%,0);
+    cursor: pointer;
+    width: 1.225rem;
+    height: .4625rem;
+    font: .225rem/.4625rem "黑体";
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #749a01;
+    text-align: center;
+    background: linear-gradient(180deg,#fde288,#dec368);
+    box-shadow: 0rem -0.0515rem .15rem 0 #dbdbdb;
+}

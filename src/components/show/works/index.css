@@ -1,0 +1,48 @@
+.worksItem-outer,.PreviousOffice-outer{
+    margin: 0 auto;
+    width: 19.7rem;
+}
+.work-item,.PreviousOffice-item{
+    position: relative;
+    padding-top: .5rem;
+    width: 100%;
+    border-left: 1px solid #000;
+}
+.work-words,.PreviousOffice-words{
+    margin-left: 8.475rem;
+    width: 11rem;
+    font: .3rem/.8rem "宋体";
+    word-spacing:.1rem;
+    color: #000;
+}
+.works-img,.PreviousOffice-img {
+    position: absolute;
+    top: .5rem;
+    left: .9625rem;
+    width: 6.85rem;
+    height: 6.425rem; 
+    background-color: red;
+}
+.word-name,.PreviousOffice-name {
+    margin-top: .25rem;
+    margin-left: 1rem;
+    font: .3rem "宋体";
+}
+.word-icon,.PreviousOffice-icon{
+    margin-left: .1rem;
+    font-family: iconfont;
+    font-style: normal;
+    color: #000;
+    cursor: pointer;
+    -moz-user-select:none;		
+	-webkit-user-select:none;	
+	-ms-user-select:none;		
+	user-select:none;
+}
+.collected{
+    font-weight: bold;
+    color: red!important;
+}
+.workspage,.PreviousOfficePage{
+    margin-top: .4rem;
+}

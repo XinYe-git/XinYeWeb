@@ -1,0 +1,38 @@
+.appreciation{
+    position: relative;
+    margin-top: .25rem;
+}
+.appreciation-show {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 14.375rem;
+}
+.appreciation-item {
+    margin-bottom: .1875rem;
+}
+.appreciation-item-img{
+    width: 6.8375rem;
+    height: 6.4125rem;
+    background-color: rosybrown;
+}
+.appreciation-item-words{
+    margin-top: .1875rem;
+    text-align: center;
+    font:.3rem "宋体";
+}
+.more{
+    position: absolute;
+    right:  0;
+    bottom: -0.6rem;
+    cursor: pointer;
+}
+.more-img{
+    width: .25rem;
+    height: .25rem;
+    vertical-align: middle;
+}
+.more-words {
+    font: .25rem "黑体";
+    vertical-align: middle;
+}

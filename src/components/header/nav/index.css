@@ -2,14 +2,50 @@
     margin-left: 7.6rem;
 }
 .nav-item {
+    position: relative;
     float: left;
+}
+.nav-item>a{
+    display: block;
     padding: 0 .4625rem;
     height: 1.125rem;
+    width: 100%;
     font:.3rem/1.125rem "黑体";
     text-align: center;
     color: #fff;
 }
+
 .nav-item-active {
     background-color: #cdcb62;
     box-shadow: 0 0 .125rem 0 #fff ;
+}
+.secondNav{
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    font:.3rem "黑体";
+    color: #000;
+    background-color: #ffffff;
+    box-shadow: 0 0 .125rem 0 #fcb5b5;
+    transition: height .2s linear;
+}
+.secondNav>li>a {
+    padding-left: .1875rem;
+    display: block;
+    height: .65rem;
+    line-height: .65rem;
+    font-weight: bold;
+    text-align: left;
+}
+.secondNav>li>a:hover {
+    color: #d4d568;
+}
+.nav-item:hover>.visitNav{
+    height: 1.95rem;
+}
+.nav-item:hover>.showNav{
+    height: 1.95rem;
 }

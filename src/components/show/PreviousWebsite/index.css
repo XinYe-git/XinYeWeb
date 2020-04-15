@@ -1,0 +1,35 @@
+
+.PreviousWebsiteItem-outer {
+    margin: .75rem auto;
+    width: 18.5rem;
+}
+.PreviousWebsite-item{
+    position: relative;
+    margin-top: .875rem;
+}
+.PreviousWebsiteItem-img{
+    display: block;
+    margin-left: 4.6625rem;
+    width: 13.85rem;
+    height: 9.45rem;
+}
+.PreviousWebsite-item-words{
+    position: absolute;
+    top: 50%;
+    left: .0625rem;
+    width: 2.25rem;
+    height: .875rem;
+    font: .375rem/.875rem "黑体";
+    font-weight: bold;
+    color: #000000;
+    text-align: center;
+    background-color: #42bdf7;
+    box-shadow: -0.175rem .175rem 0 .01rem #4de7a0;
+    transform: translate(0,-50%);
+}
+.PreviousWebsite-item-last{
+    margin-top: .875rem;
+    font: .3rem "";
+    color: #615f5f;
+    text-align: center;
+}

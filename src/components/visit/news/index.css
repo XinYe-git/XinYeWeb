@@ -1,0 +1,56 @@
+.news {
+    margin: 0 4rem;
+}
+.newsItem{
+    position: relative;
+    margin-top: .25rem;
+    padding-left: 3.65rem;
+    height: 3.25rem;
+    border-bottom: .025rem solid #c0c5c5;
+}
+.newsItem:last-of-type{
+    border-bottom: none;
+}
+.newItemTitle{
+    position: relative;
+    font: .3rem "黑体";
+    color: #ac7878;
+    font-weight: bold;
+    letter-spacing: .0625rem;
+}
+.newItemTitle::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.1rem;
+    width: 1.3375rem;
+    height: .05rem;
+    background-image: linear-gradient(180deg,#eadfdf, #8a5c34, #96c4ec);
+}
+.newItemWords{
+    margin-top: .4rem;
+    width: 100%;
+    font: .23rem "黑体";
+    color: #595353;
+    letter-spacing: .0625rem;
+    line-height: .35rem;
+    text-overflow:ellipsis; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.newItemDate {
+    margin-top: .4rem;
+    font: .2rem "黑体";
+    color: #050505;
+    letter-spacing: .0625rem;
+}
+.newItemImg {
+    position: absolute;
+    left: .25rem;
+    top: 0;
+    width: 3.2125rem;
+    height: 3.1375rem;
+    background-color: red;
+}

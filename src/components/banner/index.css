@@ -31,20 +31,39 @@
     left: .5rem;
     top: 50%;
     transform: translate(0,-50%);
+<<<<<<< HEAD
+=======
+    opacity: 1;
+>>>>>>> show
     cursor: pointer;
     width: .775rem;
     height: 1rem;
     background-image: url("./bannerLeft.png");
     background-size: cover;
+<<<<<<< HEAD
+=======
+    transition: opacity .2s linear;
+>>>>>>> show
 }
 .banner-right{
     position: absolute;
     right: .5rem;
     top: 50%;
     transform: translate(0,-50%);
+<<<<<<< HEAD
+=======
+    opacity: 1;
+>>>>>>> show
     cursor: pointer;
     width: .775rem;
     height: 1rem;
     background-image: url("./bannerRight.png");
     background-size: cover;
+<<<<<<< HEAD
+=======
+    transition: all .3s linear;
+}
+.banner-opacity{
+    opacity: 0!important;
+>>>>>>> show
 }
