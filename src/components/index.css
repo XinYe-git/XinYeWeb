@@ -20,9 +20,6 @@ a {
 	Display:table;
 	Clear:both;
 }
-<<<<<<< HEAD
-.clearfix{zoom:1;}
-=======
 .clearfix{zoom:1;}
 /* 标题的格式 */
 .news-title,.introduction-title,.join-title,.works-title,.PreviousOffice-title,.PreviousWebsite-title {
@@ -58,4 +55,3 @@ a {
 .PageNow{
     background-color: #59f577;
 }
->>>>>>> show
