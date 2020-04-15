@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import PubSub from 'pubsub-js'
 import "./index.css"
 export default class signIn extends Component {
+    constructor(){
+        super()
+        PubSub.publish("toggleShow",this.toggleShow.bind(this))
+    }
     toggleShow(){
         this.signIn.classList.toggle("signIn-none")
     }
