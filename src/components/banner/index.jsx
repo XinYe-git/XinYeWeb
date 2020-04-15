@@ -11,7 +11,6 @@ export default class banner extends Component {
     bannerLeft(){
         if(this.flag){
             this.flag=false
-            clearInterval(this.Interval)
             if(this.bannerIndex===1){
                 this.banner.style.transitionDuration= 0+"ms";
                 this.bannerIndex=4
@@ -24,14 +23,12 @@ export default class banner extends Component {
                 this.marginLeftNow=-25.5*(this.bannerIndex-1)
                 this.banner.style.marginLeft=this.marginLeftNow+"rem"
                 this.flag=true
-                this.Interval=setInterval(this.bannerRight.bind(this),5000)
             },10)
         }
     }
     bannerRight(){
         if(this.flag){
             this.flag=false
-            clearInterval(this.Interval)
             this.banner.style.transitionDuration= 300+"ms";
             this.marginLeftNow=-25.3*this.bannerIndex
             this.bannerIndex++
@@ -44,7 +41,6 @@ export default class banner extends Component {
                 },300)
             }
             this.flag=true
-            this.Interval=setInterval(this.bannerRight.bind(this),5000)
         }
     }
     componentDidMount(){
@@ -66,7 +62,9 @@ export default class banner extends Component {
             this.bannerR.classList.toggle("banner-opacity")
         })
     }
-    
+    componentWillUnmount(){
+        clearInterval(this.Interval)
+    }
     render() {
         return (
             <div className='banner' ref={dom=>this.bannerOut=dom}>

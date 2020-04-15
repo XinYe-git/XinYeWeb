@@ -36,7 +36,6 @@ export default class PreviousWebsiteItem extends Component {
     render() {
         return (
             <div className="PreviousWebsiteItem-outer">
-                <button onClick={()=>{window.removeEventListener('scroll',this.LazyLoad);}}>1111</button>
                 {
                     this.state.year.map((item,index)=>{
                         return(

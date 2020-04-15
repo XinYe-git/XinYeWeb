@@ -87,7 +87,7 @@ export default class joinDetail extends Component {
                             <p className="joinDetail-content-a-item">4、掌握web后端开发技术: 协议、架构、存储、缓存、安全等。</p>
                         </div>
                     </div>
-                    <div className="joinDetail-content-item">
+                    <div className="joinDetail-content-item joinDetail-content-item-last">
                         <div className="joinDetail-content-a">
                             <p className="joinDetail-content-a-item">以上问题都没有解答你的疑惑？</p>
                             <p className="joinDetail-content-a-item">或者有想加入</p>

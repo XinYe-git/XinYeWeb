@@ -40,7 +40,7 @@
 .joinDetail-content-a-item:not(:first-child){
     text-indent:.525rem;
 }
-.joinDetail-content-a:last-of-type{
+.joinDetail-content-item-last{
     text-align: center;
 }
 .join-img{
