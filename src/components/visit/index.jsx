@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Route,Redirect,Switch} from 'react-router-dom'
+import './index.css'
 import News from "./news"
 import Introduction from './introduction'
 import Join from './join'

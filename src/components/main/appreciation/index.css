@@ -1,6 +1,7 @@
 .appreciation{
     position: relative;
     margin-top: .25rem;
+    margin-bottom: .725rem;;
 }
 .appreciation-show {
     display: flex;

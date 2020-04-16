@@ -7,6 +7,7 @@ export default class banner extends Component {
         this.marginLeftNow=0
         this.flag=true
         this.Interval=""
+        this.removeTransition=this.removeTransition.bind(this)
     }
     bannerLeft(){
         if(this.flag){
@@ -43,12 +44,13 @@ export default class banner extends Component {
             this.flag=true
         }
     }
+    removeTransition(){
+        this.banner.style.transitionDuration= 0+"ms";
+    }
     componentDidMount(){
         this.banner.style.width=1263.33*this.banner.children.length/50+"rem"
         this.setMarginLeftNum=this.banner.offsetWidth/this.banner.children.length
-        window.addEventListener("resize",()=>{
-            this.banner.style.transitionDuration= 0+"ms";
-        })
+        window.addEventListener("resize",this.removeTransition)
         clearInterval(this.Interval)
         this.Interval=setInterval(this.bannerRight.bind(this),5000)
         this.bannerOut.addEventListener("mouseover",()=>{
@@ -64,6 +66,7 @@ export default class banner extends Component {
     }
     componentWillUnmount(){
         clearInterval(this.Interval)
+        window.removeEventListener("resize",this.removeTransition)
     }
     render() {
         return (

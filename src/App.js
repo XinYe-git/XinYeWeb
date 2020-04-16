@@ -7,14 +7,18 @@ import {
     Visit,
     Show,
     Footer,
-    SignIn
+    SignIn,
+    Personal
 } from './components'
 export default class App extends Component {
     render() {
         return (
             <>
                 <Header/>
-                <Banner/>
+                <Switch>
+                    <Route path='/personal/:userId' component={Personal}/>
+                    <Route component={Banner}/>
+                </Switch>
                 <Switch>
                     <Route path='/main'  component={Main}/>
                     <Route path='/visit' component={Visit}/>

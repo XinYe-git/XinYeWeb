@@ -1,0 +1,79 @@
+.personalLeft{
+    float: left;
+    width: 3.925rem;
+}
+.PersonalCheck {
+    padding:.625rem  1.25rem 0;
+    width: 100%;
+    height: 4.25rem;
+    border: .0375rem solid #d2d2cf;
+    border-radius: .25rem;
+    background-color: #fff;
+}
+.PersonalCheckData {
+    width: 100%;
+}
+.personalImg {
+    width: 100%;
+    height: 1.3rem;
+    border-radius: .65rem;
+    background-color: #e7e7e1;
+    cursor: pointer;
+}
+.personalName{
+    margin-top: .3375rem;
+    font:.225rem "宋体";
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.personalDataOther {
+    margin-top: .25rem;
+    font: .175rem "宋体";
+    color: #000;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.PersonalButton {
+    margin-top: .375rem;
+    width: 100%;
+    height: .5rem;
+    font:.2rem/.5rem "宋体";
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+    background: linear-gradient(180deg,#a2f9aa,#83f18d,#59ea66);
+    border: .0125rem solid #22ac38;
+    border-radius: .0625rem;
+}
+.PersonalNav {
+    margin-top: .3125rem;
+    padding: .0875rem 0;
+    width: 100%;
+    border: .0375rem solid #d2d2cf;
+    border-radius: .25rem;
+    background-color: #fff;
+}
+.PersonalNav-item{
+    position: relative;
+    padding-left: .5rem;
+    display: block;
+    height: .75rem;
+    font: .225rem/.75rem "宋体";
+    color: #000;
+}
+.PersonalNav-check::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: .0875rem;
+    background-color: #22ac38;
+}
