@@ -16,13 +16,12 @@ export default class App extends Component {
                     <Route path='/main'  />
                     <Route path='/visit' />
                     <Route path='/show' />
-                    <Route path='/business' />
-                    <Route path='/service' />
+                    <Route path='/business'/>
+                    <Route path='/service'  component={ Service }/>
                     <Route path='/register' />
                     <Redirect exact from="/" to="/main" />
                 </Switch>
                 <Route path='/signIn' />
-                <Service />
                 <Footer />
             </>
         )
