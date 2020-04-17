@@ -1,4 +1,6 @@
 .personal{
+    display: flex;
+    justify-content: space-between;
     padding: .4125rem 2.5rem 1.4375rem;
     background-color: #e7e7e1;
 }
