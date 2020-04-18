@@ -4,6 +4,7 @@ import AttendanceSheet from './AttendanceSheet/'
 import Message from './message/'
 import Collection from './collection/'
 import Order from './order/'
+import SetPersonal from './setPersonal/'
 export default class personalRight extends Component {
     render() {
         return (
@@ -11,7 +12,8 @@ export default class personalRight extends Component {
                 {/* <AttendanceSheet/> */}
                 {/* <Message/> */}
                 {/* <Collection/> */}
-                <Order/>
+                {/* <Order/> */}
+                <SetPersonal/>
             </div>
         )
     }
