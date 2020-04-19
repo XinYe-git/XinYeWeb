@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Logo from './logo'
 import Nav from './nav'
 import Reg from './regButton'
+import Personal from './personalButton'
 import './index.css'
 export default class index extends Component {
     render() {
@@ -11,6 +12,7 @@ export default class index extends Component {
                     <Logo/>
                     <Nav/>
                     <Reg/>
+                    <Personal/>
                 </div>
             </div>
         )

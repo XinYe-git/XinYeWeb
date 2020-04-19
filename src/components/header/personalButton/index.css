@@ -1,0 +1,46 @@
+.personalButton{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    right: .185rem;
+    top: 0;
+    height: 100%;
+}
+.PersonalButton-message,.PersonalButton-attendanceSheet{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 1.075rem;
+}
+.PersonalButton-check{
+    background-color: #ccce48;
+}
+.PersonalButton-message>img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 40%;
+    transform: translate(-50%,-50%);
+}
+.PersonalButton-message::before{
+    display: block;
+    position: absolute;
+    content: '';
+    top: .25rem;
+    right: .125rem;
+    width: .15rem;
+    height: .15rem;
+    border-radius: .075rem;
+    background-color: red;
+}
+.PersonalButton-attendanceSheet>img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+}

@@ -24,7 +24,7 @@ export default class setPersonal extends Component {
         const name=e.target.parentElement.className+'Change'
         if(this.state[name]){
             const val=e.target.parentElement.querySelector('input').value
-            const key=e.target.parentElement.className           
+            const key=e.target.parentElement.className    
             this.setState({[name]:false,[key]:val})
         }else{
             this.setState({[name]:true})

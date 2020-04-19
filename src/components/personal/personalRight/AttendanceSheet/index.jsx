@@ -4,7 +4,6 @@ export default class AttendanceSheet extends Component {
     constructor(){
         super()
         this.date=new Date();
-        console.log(this.date)
         this.yera=this.date.getFullYear()
         this.month=this.date.getMonth()
         this.day=this.date.getDate()
