@@ -1,10 +1,25 @@
 import React, { Component } from 'react'
 import PubSub from 'pubsub-js'
+import axios from 'axios'
 import "./index.css"
 export default class signIn extends Component {
     constructor(){
         super()
+        this.state={
+            captcha:''
+        }
         PubSub.publish("toggleShow",this.toggleShow.bind(this))
+        axios.get("/User_Con/Verify",{
+            responseType: 'blob'
+        }).then((suc)=>{
+            let reader = new FileReader()
+            reader.readAsDataURL(suc.data)
+            reader.onload = (e) => {
+                this.setState({captcha:e.target.result})
+              }
+        },(err)=>{
+            console.log(err)
+        })
     }
     toggleShow(){
         this.signIn.classList.toggle("signIn-none")
@@ -26,7 +41,7 @@ export default class signIn extends Component {
                         <div className="captcha singnIn-item">
                             <label htmlFor="">验证码</label>
                             <input type="text" name="captcha"/>
-                            <img src="" alt=""/>
+                            <img src={this.state.captcha} alt=""/>
                         </div>
                         <div className="signIn-forget"><a href="">忘记密码?</a></div>
                         <input type="submit" value="登录" className="signIn-submit"/>

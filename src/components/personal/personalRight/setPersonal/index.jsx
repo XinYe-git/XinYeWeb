@@ -6,7 +6,8 @@ export default class setPersonal extends Component {
         this.userChange=this.userChange.bind(this)
         this.getImg=this.getImg.bind(this)
         this.state={
-            imgFile:require('./test.ico'),
+            imgFile:'',
+            showImg:'',
             userName:'用户123',
             userNameChange:false,
             phone:12345678901,
@@ -33,9 +34,16 @@ export default class setPersonal extends Component {
     getImg(){
         var read=new FileReader()
         var file=this.imgFile.files[0]
+        if(file.size>2000000){
+            alert("图片大小超过2M，请重新上传")
+            return
+        }
+        var formData = new FormData();
+        formData.append('picture',file);
+        this.setState({imgFile:formData})
         read.readAsDataURL(file)
         read.onloadend=()=>{
-            this.setState({imgFile:read.result})
+            this.setState({showImg:read.result})
         }
     }
     render() {
@@ -44,7 +52,7 @@ export default class setPersonal extends Component {
                 <div className="userNameAndImg">
                     <input type="file" onChange={this.getImg} className="imgFile" ref={(dom)=>{this.imgFile=dom}} accept="image/x-png,image/gif,image/jpeg"/>
                     <div className="userImg-outter">
-                    <img className='userImg' onClick={()=>{this.imgFile.click()}} ref={(dom)=>{this.imgShow=dom}} src={this.state.imgFile} alt=""/>
+                    <img className='userImg' onClick={()=>{this.imgFile.click()}} ref={(dom)=>{this.imgShow=dom}} src={this.state.showImg} alt=""/>
                     </div>
                     {
                         this.state.userNameChange?

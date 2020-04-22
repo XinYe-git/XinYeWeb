@@ -39,5 +39,6 @@
   },
   "devDependencies": {
     "customize-cra": "^0.9.1"
-  }
+  },
+  "proxy": "http://jamkang.club/wk"
 }
