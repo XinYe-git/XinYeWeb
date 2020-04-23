@@ -6,20 +6,25 @@ import Message from './message/'
 import Collection from './collection/'
 import Order from './order/'
 import SetPersonal from './setPersonal/'
-export default class personalRight extends Component {
+import {connect} from 'react-redux'
+class personalRight extends Component {
     render() {
         return (
             <div className="personalRight">
                 <Switch>
-                    <Route path='/personal/:userId/attendanceSheet' component={AttendanceSheet}/>
-                    <Route path='/personal/:userId/message' component={Message}/>
-                    <Route path='/personal/:userId/collection' component={Collection}/>
-                    <Route path='/personal/:userId/order' component={Order}/>
-                    <Route path='/personal/:userId/management' component={SetPersonal}/>
-                    <Redirect exact from="/personal/:userId" to="/personal/:userId/attendanceSheet"/>
+                    <Route path={`/personal/${this.props.personalData.id}/attendanceSheet`} component={AttendanceSheet}/>
+                    <Route path={`/personal/${this.props.personalData.id}/message`} component={Message}/>
+                    <Route path={`/personal/${this.props.personalData.id}/collection`} component={Collection}/>
+                    <Route path={`/personal/${this.props.personalData.id}/order`} component={Order}/>
+                    <Route path={`/personal/${this.props.personalData.id}/management`} component={SetPersonal}/>
+                    <Redirect exact from={`/personal/${this.props.personalData.id}`} to={`/personal/${this.props.personalData.id}/attendanceSheet`}/>
                 <SetPersonal/>
                 </Switch>
             </div>
         )
     }
 }
+const storeToProps=(store)=>{
+    return store
+}
+export default connect(storeToProps)(personalRight)

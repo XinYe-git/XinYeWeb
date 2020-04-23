@@ -6,13 +6,12 @@ export default class appreciationItem extends Component {
         this.state={
             appreciationItem:[]
         }
-        axios.get('/Works_con/WorksSeek',{
+        axios.get('/wk/Works_con/WorksSeek',{
             params:{
                 num:6
             }
         }).then((suc)=>{
-            this.setState({appreciationItem:suc.data})
-            console.log(suc.data);
+            this.setState({appreciationItem:suc.data.contest})
         },(err)=>{
             console.log(err)
         })
@@ -30,7 +29,7 @@ export default class appreciationItem extends Component {
                         return(
                             <div className="appreciation-item" key={index}>
                                 <img className="appreciation-item-img" src={item.picture} alt={item.content}/>
-                                <p className="appreciation-item-words">{}</p>
+                                <p className="appreciation-item-words">{item.designation}</p>
                             </div>
                         )
                     })

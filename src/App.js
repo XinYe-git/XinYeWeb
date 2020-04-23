@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {Route,Redirect,Switch} from 'react-router-dom'
+import PubSub from 'pubsub-js'
+import {connect} from 'react-redux'
 import {
     Header,
     Banner,
@@ -10,13 +12,28 @@ import {
     SignIn,
     Personal
 } from './components'
-export default class App extends Component {
+class App extends Component {
+    constructor(){
+        super()
+        this.state={
+            isSignInShow:false
+        }
+        //发送切换登录界面的方法
+        setTimeout(()=>{
+            PubSub.publish("toggleShow",this.toggleShow.bind(this))
+        },50)
+    }
+    //登录页面切换显示或隐藏
+    toggleShow(){
+        this.setState({isSignInShow:!this.state.isSignInShow})
+    }
     render() {
         return (
             <>
                 <Header/>
                 <Switch>
-                    <Route path='/personal/:userId' component={Personal}/>
+                    {/* 判断store中是否有信息，有则出现个人中心的路由 */}
+                    {Object.keys(this.props.personalData).length&&<Route path={`/personal/${this.props.personalData.id}`} component={Personal}/>}
                     <Route component={Banner}/>
                 </Switch>
                 <Switch>
@@ -26,11 +43,15 @@ export default class App extends Component {
                     <Route path='/business' />
                     <Route path='/service' />
                     <Route path='/register' />
-                    <Redirect exact from="/" to="/main"/>
+                    <Redirect exact from="/" to="/main"/> 
                 </Switch>
                 <Footer/>
-                <SignIn />
+                {this.state.isSignInShow?<SignIn toggleShow={this.toggleShow.bind(this)}/>:<></>}
             </>
         )
     }
 }
+const storeToProps=(store)=>{
+    return store
+}
+export default connect(storeToProps)(App)

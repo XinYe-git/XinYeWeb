@@ -12,7 +12,7 @@
     display: flex;
     justify-content:space-between;
 }
-.footer-bd-item-a,.footer-ft-item {
+.footer-bd-item-a,.footer-ft-item,.footer-ft-item>a {
     height: .375rem;
     font: .25rem "黑体";
     text-align: center;

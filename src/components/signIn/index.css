@@ -57,8 +57,9 @@
     margin-left: .4rem;
     width: 2.5rem;
     height: 1.025rem;
-    background-color: red;
+    background-color: #fff;
     vertical-align: middle;
+    cursor: pointer;
 }
 .signIn-forget{
     text-align: right;
@@ -80,7 +81,5 @@
     outline: none;
     border: .025rem solid #0068b7;
     border-radius: .1875rem;
-}
-.signIn-none{
-    display: none;
+    cursor: pointer;
 }
