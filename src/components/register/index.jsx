@@ -21,14 +21,19 @@ export default class register extends Component {
                         <a href="/" className='toLoding'>已有账号?<span>登录</span></a>
                         <form action="" method="post" className='regIfm clearfix'>
                             <div className='reginputBox'>用 户 名<input type="text" placeholder='请设置用户名' className='reginputMod regUserName' /></div>
-                            <div className='reginputBox'>邮 &emsp; 箱<input type="text" placeholder='请填写常用手机号' className='reginputMod regMail' /></div>
-                            <div className='reginputBox'>密 &emsp; 码<input type="text" placeholder='6-14个字符组成，区分大小写' className='reginputMod regPassword' /></div>
-                            <div className='reginputBox '><span>验 证 码</span> 
-                                <input type="text" placeholder='请输入验证码' className='reginputMod regCaptcha'/>
+                            <div className='reginputBox'>邮 &emsp; 箱<input type="text" placeholder='请填写邮箱号' name="regMail" size="30" className='reginputMod regMail' /></div>
+                            <div className='reginputBox'>密 &emsp; 码<input type="password" maxlength="14" placeholder='6-14个字符组成，区分大小写' className='reginputMod regPassword' /></div>
+                            <div className='reginputBox '><span>验 证 码</span>
+                                <input type="text" placeholder='请输入验证码' className='reginputMod regCaptcha' />
                                 <div className='regCaptchaimg '>
-                                    <span>获取验证码</span> 
+                                    <span>获取验证码</span>
                                     <img src="" alt="" />
                                 </div>
+                            </div>
+                            <button type="button" name='submit' className='regSubmit'>注册</button>
+                            <div className='regProtocol'>
+                                <input type="checkbox"  className='regProChe' />&ensp;
+                                <span>阅读并接受<a href="/">《新叶用户协议》</a>及<a href="/">《新叶隐私保护声明》</a></span>
                             </div>
                         </form>
                     </div>
