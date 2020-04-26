@@ -13,6 +13,7 @@
     width: 100%;
 }
 .personalImg {
+    display: block;
     width: 100%;
     height: 1.3rem;
     border-radius: .65rem;

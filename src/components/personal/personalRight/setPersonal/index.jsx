@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './index.css'
-export default class setPersonal extends Component {
+import {connect} from 'react-redux'
+import axios from 'axios'
+class setPersonal extends Component {
     constructor(){
         super()
         this.userChange=this.userChange.bind(this)
@@ -8,17 +10,47 @@ export default class setPersonal extends Component {
         this.state={
             imgFile:'',
             showImg:'',
-            userName:'用户123',
+            userName:'',
             userNameChange:false,
-            phone:12345678901,
+            phone:"",
             phoneChange:false,
-            email:'785277659@168.com',
+            email:'',
             emailChange:false,
             profession:'设计师',
             professionChange:false,
             passWords:'#####',
-            passWordsChange:false
+            passWordsChange:false,
+            sex:0,
+            shengArr:[],
+            shiArr:[]
         }
+    }
+    componentDidMount(){
+        //将store内的信息赋值给props
+        this.setState({
+            showImg:this.props.personalData.head,
+            userName:this.props.personalData.name,
+            phone:this.props.personalData.tele,
+            email:this.props.personalData.mail,
+            profession:this.props.personalData.professions,
+            sex:this.props.personalData.sex
+        },()=>{
+            //判断sex为0还是1来选择性别的选项
+            if(this.state.sex===1){
+                this.man.removeAttribute('checked')
+                this.woman.setAttribute('checked',"")
+            }else{
+                this.woman.removeAttribute('checked')
+                this.man.setAttribute('checked',"")
+            }
+        })
+        //获取所有的省信息保存到state中
+        axios.get('/wk/User_Con/GetCity').then((suc)=>{
+            this.setState({shengArr:suc.data})
+        }).catch((err)=>{
+            console.log(err)
+            alert('获取省信息失败')
+        })
     }
     //这个是根据父元素的class来判断要修改的state，所以class一定要与state元素相同，条件渲染的判断元素是当前class名字+Change
     userChange(e){
@@ -31,6 +63,7 @@ export default class setPersonal extends Component {
             this.setState({[name]:true})
         }
     }
+    //判断图片大小并展示，并且包装图片成可以发送的数据
     getImg(){
         var read=new FileReader()
         var file=this.imgFile.files[0]
@@ -44,6 +77,25 @@ export default class setPersonal extends Component {
         read.readAsDataURL(file)
         read.onloadend=()=>{
             this.setState({showImg:read.result})
+        }
+    }
+    //判断省获取市
+    getCity(e){
+        var selectIndex=e.target.selectedIndex
+        var selectId=e.target.options[selectIndex].value
+        if(selectId){
+            axios.get('/wk/User_Con/GetCity',{
+                params:{
+                    city:selectId
+                }
+            }).then((suc)=>{
+                this.setState({shiArr:suc.data})
+            }).catch((err)=>{
+                console.log(err)
+                alert('获取市失败')
+            })
+        }else{
+            this.setState({shiArr:[]})
         }
     }
     render() {
@@ -102,20 +154,34 @@ export default class setPersonal extends Component {
                 <div className="DataOuteer">
                     <div className="sex">
                         <span className="setName">性别</span>
-                        <input type="radio" name='sex' id='man' value='man' defaultChecked/>
+                        <input type="radio" name='sex' id='man' value='man' ref={(dom)=>this.man=dom}/>
                         <label htmlFor="man">男</label>
-                        <input type="radio" name='sex' id='woman' value='woman'/>
+                        <input type="radio" name='sex' id='woman' value='woman' ref={(dom)=>this.woman=dom}/>
                         <label htmlFor="woman">女</label>
                     </div>
                 </div>
                 <div className="DataOuteer">
                     <div className="place">
                         <span className="setName">现居</span>
-                        <select name="province" id="province">
-                            <option value=""  >省份</option>
+                        <select name="province" id="province" onChange={this.getCity.bind(this)}>
+                            <option value="">省份</option>
+                            {
+                                this.state.shengArr.map((item,index)=>{
+                                    return(
+                                    <option value={item.id} key={index}>{item.cn_name}</option>
+                                    )
+                                })
+                            }
                         </select>
                         <select name="city" id="city">
-                            <option value=""  >城市</option>
+                            <option value="" >城市</option>
+                            {
+                                this.state.shiArr.map((item,index)=>{
+                                    return(
+                                    <option value={item.id} key={index}>{item.cn_name}</option>
+                                    )
+                                })
+                            }
                         </select>
                     </div>
                 </div>
@@ -151,7 +217,12 @@ export default class setPersonal extends Component {
                         </div>
                     }
                 </div>
+                <div className="completeChange">确认修改</div>
             </div>
         )
     }
 }
+const storeToProps=(store)=>{
+    return store
+}
+export default connect(storeToProps)(setPersonal)

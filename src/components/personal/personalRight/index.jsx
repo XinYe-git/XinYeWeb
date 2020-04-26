@@ -18,7 +18,6 @@ class personalRight extends Component {
                     <Route path={`/personal/${this.props.personalData.id}/order`} component={Order}/>
                     <Route path={`/personal/${this.props.personalData.id}/management`} component={SetPersonal}/>
                     <Redirect exact from={`/personal/${this.props.personalData.id}`} to={`/personal/${this.props.personalData.id}/attendanceSheet`}/>
-                <SetPersonal/>
                 </Switch>
             </div>
         )

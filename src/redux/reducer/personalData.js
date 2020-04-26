@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import {get_personal_type,set_personal_type,get_personal_err_type} from '../action.js'
 const initState={
 

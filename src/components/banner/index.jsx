@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import './index.css'
+// import axios from 'axios'
 export default class banner extends Component {
     constructor(){
         super()
         this.bannerIndex=1
+        this.bannerArr=[]
         this.marginLeftNow=0
         this.flag=true
         this.Interval=""

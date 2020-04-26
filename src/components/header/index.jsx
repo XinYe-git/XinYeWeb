@@ -4,8 +4,7 @@ import Nav from './nav'
 import Reg from './regButton'
 import Personal from './personalButton'
 import './index.css'
-import {connect} from 'react-redux'
-class index extends Component {
+export default class index extends Component {
     render() {
         return (
             <div className='header'>
@@ -13,7 +12,8 @@ class index extends Component {
                     <Logo/>
                     <Nav/>
                     {
-                        Object.keys(this.props.personalData).length?
+                        //用cookie判断，这样快些
+                        document.cookie.indexOf('id')!==-1?
                         <Personal/>
                         :
                         <Reg/>
@@ -23,7 +23,4 @@ class index extends Component {
         )
     }
 }
-const storeToProps=(store)=>{
-    return store
-}
-export default connect(storeToProps)(index)
+

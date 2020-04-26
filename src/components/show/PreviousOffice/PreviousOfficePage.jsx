@@ -7,11 +7,11 @@ export default class worksPage extends Component {
     render() {
         return (
             <ul className="Page">
-                <li><a href="1" className="Previous">{"<"}</a></li>
-                <li><a href="1" className="More">{"..."}</a></li>
-                <li><a href="1" className="PageNow">1</a></li>
-                <li><a href="1" className="More">{"..."}</a></li>
-                <li><a href="1" className="Previous">{">"}</a></li>
+                <li><div className="Previous">{"<"}</div></li>
+                <li><div className="More">{"..."}</div></li>
+                <li><div className="PageNow">1</div></li>
+                <li><div className="More">{"..."}</div></li>
+                <li><div className="Previous">{">"}</div></li>
             </ul>
         )
     }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './index.css'
+// import axios from 'axios'
 export default class AttendanceSheet extends Component {
     constructor(){
         super()
@@ -11,6 +12,13 @@ export default class AttendanceSheet extends Component {
             checkDay:9
         }
     }
+    // componentDidMount(){
+    //     axios.get('qk/Register _Con/read').then((suc)=>{
+    //         console.log(suc)
+    //     }).catch((err)=>{
+    //         console.log(err)
+    //     })
+    // }
     getSheetTitle(){
         return `${this.yera}年${this.month+1}月`
     }

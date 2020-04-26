@@ -14,19 +14,9 @@ class singnInForm extends Component {
         }
         this.captchaAgain=this.captchaAgain.bind(this)
         //初始化时获取验证码
-        axios.get("/wk/User_Con/Verify",{
-            responseType: 'blob'
-        }).then((suc)=>{
-            let reader = new FileReader()
-            reader.readAsDataURL(suc.data)
-            reader.onload = (e) => {
-                this.setState({captcha:e.target.result})
-              }
-        },(err)=>{
-            console.log(err)
-        })
+        this.captchaAgain()
     }
-    //再次获取验证码
+    //获取验证码
     captchaAgain(){
         axios.get("/wk/User_Con/Verify",{
             responseType: 'blob'
@@ -70,7 +60,7 @@ class singnInForm extends Component {
             console.log(err)
         })
     }
-    //判断store是否有用户数据,有数据就跳转到首页
+    //判断store是否有用户数据,有数据就将登录页面关闭
     componentDidUpdate(){
         if(Object.keys(this.props.personalData).length){
             this.props.toggleShow()
@@ -104,5 +94,4 @@ class singnInForm extends Component {
 const storeToProps=(store)=>{
     return store
 }
-
 export default connect(storeToProps,{getPersonal})(singnInForm)

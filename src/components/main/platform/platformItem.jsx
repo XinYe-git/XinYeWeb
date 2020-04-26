@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
-
+import axios from 'axios'
 export default class platformItem extends Component {
+    componentDidMount(){
+        //获取业务信息
+        axios.get("/ygq/user_busi/index").then((suc)=>{
+            
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
     render() {
         return (
             <div className="platform-show">

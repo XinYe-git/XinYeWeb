@@ -5,10 +5,12 @@ export const set_personal_type='setPersonalData'
 //异步获取个人信息
 export const getPersonal= () => dispatch =>{
     axios.get('/wk/User_Con/ShowUser').then((suc)=>{
-        dispatch({
-            type:get_personal_type,
-            data:suc.data
-        })
+        if(suc.data.retuen!=="请先进行登录"){
+            dispatch({
+                type:get_personal_type,
+                data:suc.data
+            })
+        }
     },(err)=>{
         alert('用户信息获取失败')
         dispatch({

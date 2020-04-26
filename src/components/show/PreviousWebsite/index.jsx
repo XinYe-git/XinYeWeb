@@ -5,7 +5,7 @@ export default class PreviousWebsite extends Component {
     render() {
         return (
             <div className="PreviousWebsite">
-                <div className="PreviousWebsite-title">往届工作室</div>
+                <div className="PreviousWebsite-title">往届官网</div>
                 <PreviousWebsiteItem/>
             </div>
         )

@@ -1,18 +1,30 @@
 import React, { Component } from 'react'
-
-export default class PersonalCheck extends Component {
+import {connect} from 'react-redux'
+import axios from 'axios'
+class PersonalCheck extends Component {
+    check(){
+        axios.get("/qk/Register_Con/add").then((suc)=>{
+            console.log(suc)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
     render() {
         return (
             <div className='PersonalCheck'>
                 <div className="PersonalCheckData">
-                    <div className="personalImg"></div>
-                    <p className="personalName">用户123</p>
+                    <img src={this.props.personalData.head} alt="" className="personalImg"/>
+                    <p className="personalName">{this.props.personalData.name}</p>
                     <p className="personalDataOther">
-                        <span className="personalAddress">常德</span> | <span className="personalProfession">职业</span>
+                    <span className="personalAddress">{this.props.personalData.address_shi}</span> | <span className="personalProfession">{this.props.personalData.peofessions}</span>
                     </p>
                 </div>
-                <div className="PersonalButton">签到</div>
+                <div className="PersonalButton" onClick={this.check.bind(this)}>签到</div>
             </div>
         )
     }
 }
+const storeToProps=(store)=>{
+    return store
+}
+export default connect(storeToProps)(PersonalCheck)
