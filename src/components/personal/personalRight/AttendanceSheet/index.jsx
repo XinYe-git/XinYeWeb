@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './index.css'
-// import axios from 'axios'
+import axios from 'axios'
 export default class AttendanceSheet extends Component {
     constructor(){
         super()
@@ -9,16 +9,17 @@ export default class AttendanceSheet extends Component {
         this.month=this.date.getMonth()
         this.day=this.date.getDate()
         this.state={
+            checkArr:[],
             checkDay:9
         }
     }
-    // componentDidMount(){
-    //     axios.get('qk/Register _Con/read').then((suc)=>{
-    //         console.log(suc)
-    //     }).catch((err)=>{
-    //         console.log(err)
-    //     })
-    // }
+    componentDidMount(){
+        axios.get('/qk/Register_Con/read').then((suc)=>{
+            this.setState({checkArr:suc.data,checkDay:suc.data.length})
+        }).catch((err)=>{
+            console.log(err)
+        })
+    }
     getSheetTitle(){
         return `${this.yera}年${this.month+1}月`
     }
@@ -77,9 +78,12 @@ export default class AttendanceSheet extends Component {
                                             item1.map((item2,index)=>{
                                                 return(
                                                     item2?
-                                                    <div className="SheetCell checkIn sheetDate" key={index}>{item2}</div>
+                                                        this.state.checkArr.indexOf(item2.toString())!==-1?
+                                                        <div className="SheetCell checkIn sheetDate" key={index}>{item2}</div>
+                                                        :
+                                                        <div className="SheetCell sheetDate" key={index}>{item2}</div>
                                                     :
-                                                    <div className="SheetCell" key={index}>{item2}</div>
+                                                    <div className="SheetCell " key={index}>{item2}</div>
                                                 )
                                             })
                                         }

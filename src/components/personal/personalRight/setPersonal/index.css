@@ -123,16 +123,3 @@
     margin-right: .4rem;
     vertical-align: middle;
 }
-.completeChange{
-    margin: .375rem auto;
-    width: 1.25rem;
-    height: .5rem;
-    font: .2rem/.5rem "宋体";
-    color: #000;
-    background: linear-gradient(180deg,#fde288,#dec368);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border-radius: .0625rem;
-    text-align: center;
-    cursor: pointer;
-}

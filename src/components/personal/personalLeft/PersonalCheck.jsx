@@ -5,6 +5,15 @@ class PersonalCheck extends Component {
     check(){
         axios.get("/qk/Register_Con/add").then((suc)=>{
             console.log(suc)
+            if(suc.data==="签到成功!"){
+                alert("签到成功")
+                window.location.reload()
+            }else if(suc.data==="你今天已签到"){
+                alert("你今天已签到")
+                window.location.reload()
+            }else{
+                alert("未知错误")
+            }
         }).catch((err)=>{
             console.log(err)
         })

@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import './index.css'
 import {connect} from 'react-redux'
 import axios from 'axios'
-class setPersonal extends Component {
+import qs from 'qs'
+class setPersonal extends PureComponent {
     constructor(){
         super()
         this.userChange=this.userChange.bind(this)
@@ -22,7 +23,9 @@ class setPersonal extends Component {
             passWordsChange:false,
             sex:0,
             shengArr:[],
-            shiArr:[]
+            shiArr:[],
+            sheng:"北京市",
+            shi:""
         }
     }
     componentDidMount(){
@@ -33,20 +36,40 @@ class setPersonal extends Component {
             phone:this.props.personalData.tele,
             email:this.props.personalData.mail,
             profession:this.props.personalData.professions,
-            sex:this.props.personalData.sex
+            sex:this.props.personalData.sex,
+            sheng:this.props.personalData.address_sheng,
+            shi:this.props.personalData.address_shi
         },()=>{
             //判断sex为0还是1来选择性别的选项
-            if(this.state.sex===1){
-                this.man.removeAttribute('checked')
-                this.woman.setAttribute('checked',"")
+            if(this.state.sex==='1'){
+                this.sex.querySelector("#man").removeAttribute('checked')
+                this.sex.querySelector("#woman").setAttribute('checked',"")
             }else{
-                this.woman.removeAttribute('checked')
-                this.man.setAttribute('checked',"")
+                this.sex.querySelector("#woman").removeAttribute('checked')
+                this.sex.querySelector("#man").setAttribute('checked',"")
             }
         })
         //获取所有的省信息保存到state中
         axios.get('/wk/User_Con/GetCity').then((suc)=>{
-            this.setState({shengArr:suc.data})
+            this.setState({shengArr:suc.data},()=>{
+                //如果有省就返回所有市
+                if(this.state.sheng!=="未填写"){
+                    let shengArr=this.state.shengArr.filter(item=>{
+                        return item.cn_name===this.state.sheng
+                    })
+                    let id=shengArr[0].id
+                    axios.get('/wk/User_Con/GetCity',{
+                        params:{
+                            city:id
+                        }
+                    }).then((suc)=>{
+                        this.setState({shiArr:suc.data})
+                    }).catch((err)=>{
+                        console.log(err)
+                        alert('获取市失败')
+                    })
+                }
+            })
         }).catch((err)=>{
             console.log(err)
             alert('获取省信息失败')
@@ -57,8 +80,60 @@ class setPersonal extends Component {
         const name=e.target.parentElement.className+'Change'
         if(this.state[name]){
             const val=e.target.parentElement.querySelector('input').value
-            const key=e.target.parentElement.className    
+            const key=e.target.parentElement.className
+            //name,mail,tele,professions的字符判断
+            switch(e.target.dataset["type"]){
+                case ("name"):
+                    if(!/^.{1,4}$/.test(val)){
+                        alert("名字长度在1-4字符之间")
+                        this.setState({[name]:false})
+                        return
+                    }
+                break
+                case("mail"):
+                if(!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/.test(val)){
+                    alert("请输入正确的电子邮箱")
+                    this.setState({[name]:false})
+                    return
+                }
+                break
+                case("tele"):
+                    if(!/^((13[0-9])|(17[0-1,6-8])|(15[^4,\\D])|(18[0-9]))\d{8}$/.test(val)){
+                        alert("请输入正确的手机号")
+                        this.setState({[name]:false})
+                        return
+                    }
+                break
+                case("professions"):
+                    if(!/^.{1,3}$/.test(val)){
+                        alert("职业的字符长度为1-3，请重新输入")
+                        this.setState({[name]:false})
+                        return
+                    }
+                break
+                default:
+                    alert("未知错误")
+                    this.setState({[name]:false})
+                    return
+            }    
             this.setState({[name]:false,[key]:val})
+            axios.post("/wk/User_Con/ReviseDeal",qs.stringify({
+                key:e.target.dataset["type"],
+                value:val
+            })).then((suc)=>{
+                console.log(suc)
+                if(suc.data.return==="修改成功"){
+                    alert("修改成功")
+                    window.location.reload()
+                }else if(suc.data.return==="未知错误,也许是你还没有进行修改哦"){
+                    alert("修改成功")
+                    window.location.reload()
+                }else{
+                    alert("未知错误")
+                }
+            }).catch((err)=>{
+                console.log(err)
+            })
         }else{
             this.setState({[name]:true})
         }
@@ -79,11 +154,12 @@ class setPersonal extends Component {
             this.setState({showImg:read.result})
         }
     }
-    //判断省获取市
+    //判断省获取市并提交省
     getCity(e){
         var selectIndex=e.target.selectedIndex
-        var selectId=e.target.options[selectIndex].value
+        var selectId=e.target.options[selectIndex].dataset["name"]
         if(selectId){
+            //获取市
             axios.get('/wk/User_Con/GetCity',{
                 params:{
                     city:selectId
@@ -94,9 +170,56 @@ class setPersonal extends Component {
                 console.log(err)
                 alert('获取市失败')
             })
+            // 修改省
+            let val=e.target.options[selectIndex].innerText
+            axios.post('/wk/User_Con/ReviseDeal',qs.stringify({
+                key:'address_sheng',
+                value:val
+            })).then(suc=>{
+                console.log(suc.data)
+                this.setState({sheng:val})
+            }).catch(err=>{
+                console.log(err)
+            })
+            //将市初始化
+            axios.post('/wk/User_Con/ReviseDeal',qs.stringify({
+                key:'address_shi',
+                value:'未填写'
+            })).then(suc=>{
+                this.setState({shi:"未填写"})
+            }).catch(err=>{
+                console.log(err)
+            })
         }else{
             this.setState({shiArr:[]})
         }
+    }
+    //提交市
+    setCity(e){
+        var selectIndex=e.target.selectedIndex
+        let val=e.target.options[selectIndex].innerText
+        console.log(val)
+        axios.post('/wk/User_Con/ReviseDeal',qs.stringify({
+            key:'address_shi',
+            value:val
+        })).then(suc=>{
+            console.log(suc.data)
+            this.setState({shi:val})
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+    //改变性别并发送
+    sexChange(e){
+        console.log(e.target.value)
+        axios.post("/wk/User_Con/ReviseDeal",qs.stringify({
+            key:'sex',
+            value:e.target.value
+        })).then(suc=>{
+            console.log(suc.data)
+        }).catch(err=>{
+            console.log(err)
+        })
     }
     render() {
         return (
@@ -110,7 +233,7 @@ class setPersonal extends Component {
                         this.state.userNameChange?
                         <div className='userName'>
                             <input type="text" className='changeInput' defaultValue={this.state.userName}/>
-                            <div className="userChange" onClick={this.userChange}>完成</div>
+                            <div className="userChange" onClick={this.userChange} data-type="name">完成</div>
                         </div>
                         :
                         <div className='userName'>
@@ -125,7 +248,7 @@ class setPersonal extends Component {
                         <div className="phone">
                             <span className="setName">手机号</span>
                             <span className='phoneData'><input type="text" className='changeInput' defaultValue={this.state.phone}/></span>
-                            <div className="userChange" onClick={this.userChange}>完成</div>
+                            <div className="userChange" onClick={this.userChange} data-type="tele">完成</div>
                         </div>
                         :
                         <div className="phone">
@@ -141,7 +264,7 @@ class setPersonal extends Component {
                         <div className="email">
                             <span className="setName">邮箱</span>
                             <span className='emailData'><input type="text" className='changeInput' defaultValue={this.state.email}/></span>
-                            <div className="userChange" onClick={this.userChange}>完成</div>
+                            <div className="userChange" onClick={this.userChange} data-type="mail">完成</div>
                         </div>
                         :
                         <div className="email">
@@ -152,33 +275,33 @@ class setPersonal extends Component {
                     }
                 </div>
                 <div className="DataOuteer">
-                    <div className="sex">
+                    <div className="sex" ref={dom=>this.sex=dom}>
                         <span className="setName">性别</span>
-                        <input type="radio" name='sex' id='man' value='man' ref={(dom)=>this.man=dom}/>
+                        <input type="radio" name='sex' id='man' value="0" onChange={this.sexChange.bind(this)}/>
                         <label htmlFor="man">男</label>
-                        <input type="radio" name='sex' id='woman' value='woman' ref={(dom)=>this.woman=dom}/>
+                        <input type="radio" name='sex' id='woman' value="1" onChange={this.sexChange.bind(this)}/>
                         <label htmlFor="woman">女</label>
                     </div>
                 </div>
                 <div className="DataOuteer">
                     <div className="place">
                         <span className="setName">现居</span>
-                        <select name="province" id="province" onChange={this.getCity.bind(this)}>
-                            <option value="">省份</option>
+                        <select name="province" id="province" onChange={this.getCity.bind(this)}  value={this.state.sheng}>
+                            <option value="" data-name="">省份</option>
                             {
                                 this.state.shengArr.map((item,index)=>{
                                     return(
-                                    <option value={item.id} key={index}>{item.cn_name}</option>
+                                            <option value={item.cn_name} data-name={item.id} key={index} >{item.cn_name}</option>
                                     )
                                 })
                             }
                         </select>
-                        <select name="city" id="city">
-                            <option value="" >城市</option>
+                        <select name="city" id="city" onChange={this.setCity.bind(this)} value={this.state.shi}>
+                            <option value="address_shi" data-name="" >城市</option>
                             {
                                 this.state.shiArr.map((item,index)=>{
                                     return(
-                                    <option value={item.id} key={index}>{item.cn_name}</option>
+                                    <option value={item.cn_name} key={index} data-name={item.id}>{item.cn_name}</option>
                                     )
                                 })
                             }
@@ -191,7 +314,7 @@ class setPersonal extends Component {
                         <div className="profession">
                             <span className="setName">职业</span>
                             <span className='professionData'><input type="text" className='changeInput' defaultValue={this.state.profession}/></span>
-                            <div className="userChange" onClick={this.userChange}>完成</div>
+                            <div className="userChange" onClick={this.userChange} data-type="professions">完成</div>
                         </div>
                         :
                         <div className="profession">
@@ -217,7 +340,6 @@ class setPersonal extends Component {
                         </div>
                     }
                 </div>
-                <div className="completeChange">确认修改</div>
             </div>
         )
     }

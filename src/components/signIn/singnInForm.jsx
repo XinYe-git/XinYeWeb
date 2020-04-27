@@ -73,7 +73,7 @@ class singnInForm extends Component {
                 <form action="/User_Con/LoginDeal" method="post" onSubmit={this.setFormData.bind(this)}>
                     <div className="passName singnIn-item">
                         <label htmlFor="">用户名</label>
-                        <input type="text" name="name" onChange={this.bindData.bind(this)}/>
+                        <input type="text" name="name" onChange={this.bindData.bind(this)} placeholder="用户名/邮箱"/>
                     </div>
                     <div className="password singnIn-item">
                         <label htmlFor="">密  码</label>

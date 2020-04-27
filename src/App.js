@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {Route,Redirect,Switch} from 'react-router-dom'
 import PubSub from 'pubsub-js'
 import {getPersonal} from './redux/action'
+import qs from 'qs'
 import store from './redux/store'
 import {
     Header,
