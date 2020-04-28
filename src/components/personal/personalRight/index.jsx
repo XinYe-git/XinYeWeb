@@ -12,12 +12,12 @@ class personalRight extends Component {
         return (
             <div className="personalRight">
                 <Switch>
-                    <Route path={`/personal/${this.props.personalData.id}/attendanceSheet`} component={AttendanceSheet}/>
-                    <Route path={`/personal/${this.props.personalData.id}/message`} component={Message}/>
-                    <Route path={`/personal/${this.props.personalData.id}/collection`} component={Collection}/>
-                    <Route path={`/personal/${this.props.personalData.id}/order`} component={Order}/>
-                    <Route path={`/personal/${this.props.personalData.id}/management`} component={SetPersonal}/>
-                    <Redirect exact from={`/personal/${this.props.personalData.id}`} to={`/personal/${this.props.personalData.id}/attendanceSheet`}/>
+                    <Route path={`/personal/${this.props.personalData.id}/attendanceSheet`} component={AttendanceSheet} exact/>
+                    <Route path={`/personal/${this.props.personalData.id}/message`} component={Message} exact/>
+                    <Route path={`/personal/${this.props.personalData.id}/collection`} component={Collection} exact/>
+                    <Route path={`/personal/${this.props.personalData.id}/order`} component={Order} exact/>
+                    <Route path={`/personal/${this.props.personalData.id}/management`} component={SetPersonal} exact/>
+                    <Redirect from={`/personal`} to={`/personal/${this.props.personalData.id}/attendanceSheet`} exact/>
                 </Switch>
             </div>
         )

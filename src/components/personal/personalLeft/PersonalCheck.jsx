@@ -25,7 +25,7 @@ class PersonalCheck extends Component {
                     <img src={this.props.personalData.head} alt="" className="personalImg"/>
                     <p className="personalName">{this.props.personalData.name}</p>
                     <p className="personalDataOther">
-                    <span className="personalAddress">{this.props.personalData.address_shi}</span> | <span className="personalProfession">{this.props.personalData.peofessions}</span>
+                    <span className="personalAddress">{this.props.personalData.address_shi}</span> | <span className="personalProfession">{this.props.personalData.professions}</span>
                     </p>
                 </div>
                 <div className="PersonalButton" onClick={this.check.bind(this)}>签到</div>

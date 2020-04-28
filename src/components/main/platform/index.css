@@ -4,6 +4,7 @@
 .platform-show{
     display: flex;
     justify-content:space-around;
+    height: 4.125rem;
 }
 .platform-item{
     position: relative;

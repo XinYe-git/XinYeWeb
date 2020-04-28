@@ -8,6 +8,9 @@ export default class worksItem extends Component {
             collectedArr:[]
         }
         Axios.get('/wk/Collect_Con/UserCollect').then((suc)=>{
+            if(suc.data.retuen==="还没有进行登录哦"){
+                return
+            }
             let arr=suc.data.contect.map(item=>{
                 return item[0].id
             })

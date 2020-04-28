@@ -1,0 +1,40 @@
+.administratorHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 1.125rem;
+    border-bottom: .1rem solid #1d401c;
+    background-color: #0f1e0d;
+}
+.administratorLogo{
+    margin-left: .5rem;
+}
+.administratorImg{
+    width: .75rem;
+    height: .75rem;
+    vertical-align: middle;
+}
+.administratorWord {
+    margin-left: .225rem;
+    font: .45rem "隶书";
+    color: #fff;
+    vertical-align: middle;
+}
+.administratorButton{
+    margin-right: .5625rem;
+}
+.administratorButton>img{
+    width: .9625rem;
+    height: .9625rem;
+    border-radius: 50%;
+    background-color: #fff;
+    vertical-align: middle;
+}
+.administratorButton>span{
+    margin-left: .375rem;
+    font:.3rem "黑体";
+    color: #fff;
+    vertical-align: middle;
+    cursor: pointer;
+}

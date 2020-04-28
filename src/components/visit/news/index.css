@@ -47,10 +47,11 @@
     letter-spacing: .0625rem;
 }
 .newItemImg {
+    display: block;
     position: absolute;
     left: .25rem;
     top: 0;
     width: 3.2125rem;
     height: 3.1375rem;
-    background-color: red;
+    background-color: #fff;
 }

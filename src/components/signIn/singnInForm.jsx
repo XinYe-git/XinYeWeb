@@ -48,10 +48,12 @@ class singnInForm extends Component {
                     alert('验证码不对,请重新输入')
                     break
                 case '用户或者密码不正确，请检查大小写':
+                    this.captchaAgain()
                     alert('用户或者密码不正确，请检查大小写')
                     break
                 case '登录成功':
-                    this.props.getPersonal()
+                    this.props.getPersonal(()=>{window.location.reload()})
+                    
                     break
                 default:
                     alert('返回值未知')
