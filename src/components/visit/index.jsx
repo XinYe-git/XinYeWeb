@@ -9,10 +9,11 @@ export default class visit extends Component {
         return (
             <div className="visit">
                 <Switch>
-                    <Route path='/visit/news' component={News}/>
-                    <Route path='/visit/introduction' component={Introduction}/>
-                    <Route path='/visit/join' component={Join}/>
+                    <Route path='/visit/news' component={News} exact/>
+                    <Route path='/visit/introduction' component={Introduction} exact/>
+                    <Route path='/visit/join' component={Join} exact/>
                     <Redirect exact from="/visit" to="/visit/news"/>
+                    <Redirect to="/404" />
                 </Switch>
             </div>
         )

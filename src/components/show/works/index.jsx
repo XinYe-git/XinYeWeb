@@ -13,21 +13,37 @@ export default class works extends Component {
         }
         this.getWorkData(this.state.pageNow)
     }
-    getWorkData(index){
+    getWorkData(index,callback=()=>{}){
         axios.get('/wk/Works_con/WorksSeek',{
             params:{
                 page:index
             }
         }).then((suc)=>{
             this.setState({maxPageNow:suc.data.pages,contest:suc.data.contest})
+            callback()
         }).catch((err)=>{
             console.log(err)
         })
     }
     changePage(page){
         this.setState({pageNow:page},()=>{
-            this.getWorkData(this.state.pageNow)
+            this.getWorkData(this.state.pageNow,()=>{
+                // chrome
+                document.body.scrollTop = 0
+                // firefox
+                document.documentElement.scrollTop = 0
+                // safari
+                window.pageYOffset = 0
+            })
         })
+    }
+    componentDidMount(){
+        // chrome
+        document.body.scrollTop = 0
+        // firefox
+        document.documentElement.scrollTop = 0
+        // safari
+        window.pageYOffset = 0
     }
     render() {
         return (

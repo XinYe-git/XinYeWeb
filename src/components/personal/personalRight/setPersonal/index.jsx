@@ -9,7 +9,6 @@ class setPersonal extends PureComponent {
         this.userChange=this.userChange.bind(this)
         this.getImg=this.getImg.bind(this)
         this.state={
-            imgFile:'',
             showImg:'',
             userName:'',
             userNameChange:false,
@@ -146,13 +145,25 @@ class setPersonal extends PureComponent {
             alert("图片大小超过2M，请重新上传")
             return
         }
-        var formData = new FormData();
-        formData.append('picture',file);
-        this.setState({imgFile:formData})
+        var formData = new FormData()
+        formData.append("key","head")
+        formData.append('value',file)
+        console.log(formData.get("value"))
         read.readAsDataURL(file)
         read.onloadend=()=>{
             this.setState({showImg:read.result})
+            axios({
+                url:'/wk/User_Con/ReviseDeal',
+                method : 'post',
+                headers: { "token": window.localStorage.getItem( "token" ) },
+                data:formData
+            }).then(suc=>{
+                console.log(suc)
+            }).catch(err=>{
+                console.log(err)
+            })
         }
+
     }
     //判断省获取市并提交省
     getCity(e){

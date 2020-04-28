@@ -9,10 +9,11 @@ export default class show extends Component {
         return (
             <div className="show">
                 <Switch>
-                    <Route path='/show/works' component={Works}/>
-                    <Route path='/show/PreviousWebsite'  component={PreviousWebsite}/>
-                    <Route path='/show/PreviousOffice' component={PreviousOffice}/>
+                    <Route path='/show/works' component={Works} exact/>
+                    <Route path='/show/PreviousWebsite'  component={PreviousWebsite} exact/>
+                    <Route path='/show/PreviousOffice' component={PreviousOffice} exact/>
                     <Redirect exact from="/show" to="/show/works"/>
+                    <Redirect to="/404" />
                 </Switch>
             </div>
         )

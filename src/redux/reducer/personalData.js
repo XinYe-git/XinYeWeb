@@ -1,4 +1,4 @@
-import {get_personal_type,set_personal_type,get_personal_err_type} from '../action.js'
+import {get_personal_type,init_personal_type,get_personal_err_type} from '../action.js'
 const initState={
 
 }
@@ -9,8 +9,8 @@ export default function personalData(state=initState,action){
             return Object.assign({},state,action.data)
         case get_personal_err_type:
             return state
-        case set_personal_type:
-            return Object.assign({},state,action.setData)
+        case init_personal_type:
+            return {}
         default:
             return state
     }
