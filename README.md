@@ -14,13 +14,13 @@
 |  |- /administrator/service (问题反馈)
 |  |- /administrator/business (业务)
 |- /404 (404页面)
+|- /personal/用户id (个人页面，根据cookie内是否有id动态出现)
+|  |- /personal/用户id/attendanceSheet (签到表)
+|  |- /personal/用户id/message (公告)
+|  |- /personal/用户id/collection (收藏)
+|  |- /personal/用户id/order (订单)
+|  |- /personal/用户id/management (个人设置)
 |- / (官网主页)
-|  |- /personal/用户id (个人页面，根据cookie内是否有id动态出现)
-|  |  |- /personal/用户id/attendanceSheet (签到表)
-|  |  |- /personal/用户id/message (公告)
-|  |  |- /personal/用户id/collection (收藏)
-|  |  |- /personal/用户id/order (订单)
-|  |  |- /personal/用户id/management (个人设置)
 |  |- /main (首页)
 |  |- /visit (走进新叶)
 |  |  |- /visit/news (动态资讯)
@@ -35,4 +35,7 @@
 ````
 # 未做完的任务
 + banner获取也没写（好像获取不到）全康
-+ 头像无法上传（什么方法都试了）,问下后台到底收什么
++ 返回全部信息没有签到时长
++ 返回订单没有业务类型
++ 作品没有做上传图片和删除，而且设计稿内没有添加作品
++ 收藏无接口

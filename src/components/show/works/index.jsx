@@ -8,7 +8,7 @@ export default class works extends Component {
         super()
         this.state={
             pageNow:1,
-            maxPageNow:10,
+            maxPageNow:1,
             contest:[]
         }
         this.getWorkData(this.state.pageNow)
@@ -19,6 +19,7 @@ export default class works extends Component {
                 page:index
             }
         }).then((suc)=>{
+            if(suc.data.return==="没有作品了哦") return
             this.setState({maxPageNow:suc.data.pages,contest:suc.data.contest})
             callback()
         }).catch((err)=>{

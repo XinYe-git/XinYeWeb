@@ -30,7 +30,7 @@ export default class collection extends Component {
                         return(
                             <div className="collection-item" key={index}>
                                 <img src={item[0].picture} alt=""/>
-                                <p className="collection-item-name">{item[0].designation}</p>
+                                <p className="collection-item-name">{item[0].name}</p>
                             </div>
                         )
                     })

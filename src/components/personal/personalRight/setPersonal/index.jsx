@@ -3,6 +3,7 @@ import './index.css'
 import {connect} from 'react-redux'
 import axios from 'axios'
 import qs from 'qs'
+import {getPersonal} from '../../../../redux/action'
 class setPersonal extends PureComponent {
     constructor(){
         super()
@@ -148,21 +149,22 @@ class setPersonal extends PureComponent {
         var formData = new FormData()
         formData.append("key","head")
         formData.append('value',file)
-        console.log(formData.get("value"))
-        read.readAsDataURL(file)
-        read.onloadend=()=>{
-            this.setState({showImg:read.result})
-            axios({
-                url:'/wk/User_Con/ReviseDeal',
-                method : 'post',
-                headers: { "token": window.localStorage.getItem( "token" ) },
-                data:formData
-            }).then(suc=>{
-                console.log(suc)
-            }).catch(err=>{
-                console.log(err)
-            })
-        }
+        axios({
+            url:'/wk/User_Con/ReviseDeal',
+            method : 'post',
+            headers: { "token": window.localStorage.getItem( "token" ) },
+            data:formData
+        }).then(suc=>{
+            if(suc.data.return==="修改成功"){
+                alert('修改成功')
+                window.location.reload()
+            }else{
+                alert('修改失败')
+            }            
+        }).catch(err=>{
+            console.log(err)
+        })
+        
 
     }
     //判断省获取市并提交省
@@ -358,4 +360,4 @@ class setPersonal extends PureComponent {
 const storeToProps=(store)=>{
     return store
 }
-export default connect(storeToProps)(setPersonal)
+export default connect(storeToProps,{getPersonal})(setPersonal)

@@ -2,3 +2,13 @@
     height: 22.125rem;
     background-color: #e7e7e1;
 }
+.administrator-outter{
+    display: flex;
+    
+}
+.administrator-router{
+    float: left;
+    width: 19.8rem;
+    height: 19.35rem;
+    background-color: #bfdbc7;
+}

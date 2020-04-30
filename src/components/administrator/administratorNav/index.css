@@ -1,5 +1,4 @@
 .administratorNav{
-    float: left;
     width: 4.1625rem;
     height: 10.1625rem;
 }
@@ -8,6 +7,7 @@
     width: 100%;
     height: 11.1%;
     border-bottom: .05rem solid #444644;
+    border-right: .125rem solid #374e37;
     background-color: #2d2f2d;
     font:.5rem/2.5 "黑体";
     color: #fff;
@@ -16,4 +16,5 @@
 .administratorNav-item-check{
     background-color: #bdc0bc;
     border-bottom: .05rem solid #ecece7;
+    border-right: .125rem solid #d7ecd2;
 }

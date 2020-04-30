@@ -6,6 +6,7 @@ const initState={
 export default function personalData(state=initState,action){
     switch(action.type){
         case get_personal_type:
+            action.data.head=action.data.head+"?temp=" + Math.random()
             return Object.assign({},state,action.data)
         case get_personal_err_type:
             return state

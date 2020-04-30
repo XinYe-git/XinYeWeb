@@ -11,6 +11,8 @@ export default class appreciationItem extends Component {
                 num:6
             }
         }).then((suc)=>{
+            console.log(suc.data)
+            if(suc.data.return==="没有作品了哦") return
             this.setState({appreciationItem:suc.data.contest})
         },(err)=>{
             console.log(err)
@@ -29,7 +31,7 @@ export default class appreciationItem extends Component {
                         return(
                             <div className="appreciation-item" key={index}>
                                 <img className="appreciation-item-img" src={item.picture} alt={item.content}/>
-                                <p className="appreciation-item-words">{item.designation}</p>
+                                <p className="appreciation-item-words">{item.name}</p>
                             </div>
                         )
                     })

@@ -7,6 +7,7 @@ export default class worksItem extends Component {
         this.state={
             collectedArr:[]
         }
+        //判断用户收藏的东西来点红星星
         Axios.get('/wk/Collect_Con/UserCollect').then((suc)=>{
             if(suc.data.retuen==="还没有进行登录哦"){
                 return
@@ -55,7 +56,7 @@ export default class worksItem extends Component {
                                 <p className="work-words">{item.content} </p>
                                 <img src={item.picture} alt="" className="works-img"/>
                                 <div className="word-name">
-                                    {item.designation}
+                                    {item.name}
                                     {
                                         this.state.collectedArr.indexOf(item.id)===-1?
                                         <i onClick={this.setStar.bind(this)} className="word-icon" data-id={item.id} >&#xe60a;</i>
