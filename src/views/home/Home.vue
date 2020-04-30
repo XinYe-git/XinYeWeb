@@ -1,18 +1,21 @@
 <template>
   <div>
   <swiper>
-    <swiper-item>
-      <img src="~assets/img/home/lunbo1.png">
+    <swiper-item v-for="(item,index) in backgroundSrc">
+      <img :src="`http://jamkang.club/${item}`">
     </swiper-item>
-    <swiper-item>
-      <img src="~assets/img/home/lunbo2.png">
-    </swiper-item>
-    <swiper-item>
-      <img src="~assets/img/home/lunbo1.png">
-    </swiper-item>
-    <swiper-item>
-      <img src="~assets/img/home/lunbo2.png">
-    </swiper-item>
+    <!--<swiper-item>-->
+      <!--<img src="~assets/img/home/lunbo1.png">-->
+    <!--</swiper-item>-->
+    <!--<swiper-item>-->
+      <!--<img src="~assets/img/home/lunbo2.png">-->
+    <!--</swiper-item>-->
+    <!--<swiper-item>-->
+      <!--<img src="~assets/img/home/lunbo1.png">-->
+    <!--</swiper-item>-->
+    <!--<swiper-item>-->
+      <!--<img src="~assets/img/home/lunbo2.png">-->
+    <!--</swiper-item>-->
   </swiper>
   <p class="order">我们专注创新网络发展 </p>
   <order>
@@ -36,9 +39,22 @@
   import OrderItem from "./childComps/OrderItem";
   import Design from "./childComps/Design";
   import DesignItem from "./childComps/DesignItem";
+  import {backGround} from 'network/home'
   export default {
     name: "Home",
-    components: {DesignItem, Design, OrderItem, Order, Swiper,SwiperItem}
+    components: {DesignItem, Design, OrderItem, Order, Swiper,SwiperItem},
+    data(){
+      return{
+        backgroundSrc:''
+      }
+    },
+    created(){
+      backGround().then(res=>{
+        this.backgroundSrc=res
+      })
+
+    }
+
   }
 </script>
 

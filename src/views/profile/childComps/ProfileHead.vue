@@ -5,10 +5,10 @@
       <img class="right" src="~assets/img/profile/right.png">
     </div>
     <div class="user">
-      <img class="left" src="~assets/img/profile/user.png">
+      <img class="left" :src='`http://jamkang.club/${profileMessage.head}`'>
       <ul class="left">
-        <li>用户123</li>
-        <li>湖南常德|职业</li>
+        <li>{{profileMessage.name}}</li>
+        <li>{{profileMessage.address_sheng}}</li>
       </ul>
     </div>
   </div>
@@ -17,6 +17,14 @@
 <script>
   export default {
     name: "ProfileHead",
+    props:{
+      profileMessage:{
+        type: Object,
+        default(){
+          return{}
+        }
+      }
+    },
     methods:{
       back(){
         this.$router.back()
@@ -31,7 +39,8 @@
   top: -57px;
   height: 230px;
   width: 640px;
-  background: url("~assets/img/profile/background.png")640px 230px;
+  background: url("~assets/img/profile/background.png")no-repeat;
+  background-size: 640px 230px;
 }
   .logo img:first-child{
     width: 15px;

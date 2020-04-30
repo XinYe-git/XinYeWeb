@@ -1,9 +1,9 @@
 <template>
   <div class="profile-date">
     <div>
-      <p>签到</p>
+      <p @click="check">签到</p>
       <div class="candel">
-        <h2>2020年3月</h2>
+        <h2>{{checkYear[0]}}年{{checkMonth[0]}}月</h2>
         <ul class="weekend">
           <li>日</li>
           <li>一</li>
@@ -13,15 +13,83 @@
           <li>五</li>
           <li>六</li>
         </ul>
-        <h3>本月已签到9天，累计14小时34分</h3>
+        <ul class="everyDay">
+          <li v-for="(item,index) in day"><a>{{item}}</a></li>
+        </ul>
+        <h3>本月已签到{{checkedTimes}}天，累计0小时0分</h3>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+  import {checkedDay,checkedToday} from 'network/profile'
   export default {
-    name: "ProfileDate"
+    name: "ProfileDate",
+    inject:['reload'],
+    data(){
+      return{
+        day:{},
+        //月份
+        checkMonth:{},
+        //年份
+        checkYear:{},
+        //今天
+        toDay:{},
+        //签到次数
+        checkedTimes:'',
+        //签到日期
+        checkedday:[]
+      }
+    },
+    created(){
+        let daysOfMonth = [];
+        let existMonth = [];
+        let Year=[]
+        let nowDay=[]
+        //从0开始所以要加1
+        let month = new Date().getMonth() + 1;
+        let fullYear = new Date().getFullYear();
+        let strDate = new Date().getDate();
+        //本月最后一天
+        let lastDayOfMonth = new Date(fullYear,month, 0).getDate();
+        for (let i = 1; i <= lastDayOfMonth; i++) {
+          daysOfMonth.push(i);
+        }
+        nowDay.push(strDate)
+        existMonth.push(month)
+        Year.push(fullYear)
+        this.checkMonth=existMonth
+        this.day=daysOfMonth;
+        this.checkYear=Year
+        this.toDay=nowDay
+
+      //签到日期
+      checkedDay().then(res=>{
+        this.checkedTimes=res.length
+        let li = document.querySelectorAll('.everyDay li')
+        for(let i=0;i<res.length;i++){
+          li[res[i]-1].className = 'checked'
+        }
+      })
+
+    },
+    methods:{
+      check(){
+        checkedToday().then(res=>{
+          console.log(res);
+          if(res==='签到成功!'){
+            alert('签到成功')
+          }
+          if(res==='你今天已签到'){
+            alert('你今天已签到')
+          }
+          this.reload()
+          this.$router.go(0)
+        })
+
+      },
+  }
   }
 </script>
 
@@ -66,5 +134,28 @@
     width: 78px;
     font-size: 12px;
     float: left;
+  }
+  .everyDay{
+    margin-top: 22px;
+    overflow: hidden;
+  }
+  .everyDay li{
+    width: 78px;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    font-size: 12px;
+    float: left;
+
+  }
+  .checked{
+    background: url("~assets/img/profile/checked.png")no-repeat 20px;
+  }
+  .everyDay li a{
+    display: block;
+    margin: 0 auto;
+    height: 34px;
+    width: 34px;
+
   }
 </style>

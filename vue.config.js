@@ -9,7 +9,20 @@ module.exports = {
         'views': '@/views',
       }
     }
+  },
+  devServer: {
+  open: true,
+      port: 8080,
+      proxy: {
+    '/api': {
+      target: 'http://jamkang.club/',
+          ws: true,
+          changeOrigin: true,
+          pathRewrite: {
+        '^/api': ''
+      }
+    },
   }
 }
 
-
+}
