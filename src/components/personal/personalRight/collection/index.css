@@ -11,7 +11,7 @@
 .collection-item>img{
     width: 4.0625rem;
     height: 4.0625rem;
-    /* background-color: red; */
+    background-color: #fff;
 }
 .collection-item-name {
     margin-top: .1875rem;

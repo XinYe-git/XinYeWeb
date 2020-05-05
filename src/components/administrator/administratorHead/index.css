@@ -8,6 +8,7 @@
     background-color: #0f1e0d;
 }
 .administratorLogo{
+    display: block;
     margin-left: .5rem;
 }
 .administratorImg{

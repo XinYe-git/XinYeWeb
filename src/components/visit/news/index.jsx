@@ -10,7 +10,32 @@ export default class news extends Component {
         this.state={
             pageNow:1,
             maxPageNow:10,
-            contest:[]
+            contest:[
+                {
+                    title:"",
+                    content:"",
+                    time:"",
+                    img:""
+                },
+                {
+                    title:"",
+                    content:"",
+                    time:"",
+                    img:""
+                },
+                {
+                    title:"",
+                    content:"",
+                    time:"",
+                    img:""
+                },
+                {
+                    title:"",
+                    content:"",
+                    time:"",
+                    img:""
+                }
+            ]
         }
         this.getWorkData(this.state.pageNow)
     }
@@ -20,7 +45,7 @@ export default class news extends Component {
                 page:index
             }
         }).then((suc)=>{
-            this.setState({maxPageNow:suc.data.pages,contest:suc.data.message})
+            this.setState({maxPageNow:suc.data.pages,contest:Object.assign(this.state.contest,suc.data.message)})
             callback()
         }).catch((err)=>{
             console.log(err)

@@ -9,18 +9,44 @@ export default class works extends Component {
         this.state={
             pageNow:1,
             maxPageNow:1,
-            contest:[]
+            contest:[
+                {
+                    content:"",
+                    picture:"",
+                    name:"",
+                    id:""
+                },
+                {
+                    content:"",
+                    picture:"",
+                    name:"",
+                    id:""
+                },
+                {
+                    content:"",
+                    picture:"",
+                    name:"",
+                    id:""
+                },
+                {
+                    content:"",
+                    picture:"",
+                    name:"",
+                    id:""
+                }
+            ]
         }
         this.getWorkData(this.state.pageNow)
     }
     getWorkData(index,callback=()=>{}){
         axios.get('/wk/Works_con/WorksSeek',{
             params:{
-                page:index
+                page:index,
+                num:4
             }
         }).then((suc)=>{
             if(suc.data.return==="没有作品了哦") return
-            this.setState({maxPageNow:suc.data.pages,contest:suc.data.contest})
+            this.setState({maxPageNow:suc.data.pages,contest:Object.assign(this.state.contest,suc.data.contest)})
             callback()
         }).catch((err)=>{
             console.log(err)

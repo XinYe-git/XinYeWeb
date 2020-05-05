@@ -8,13 +8,19 @@ import AdministratorNav from './administratorNav'
 import {
     User,
     Order,
-    Work
+    Work,
+    Message,
+    Ad,
+    Service,
+    Business
 } from './administratorCom'
 class administrator extends Component {
-    componentDidMount(){
-        this.props.getPersonal()
-    }
     render() {
+        if(this.props.personalData.type==="0"){
+            alert("你不是管理者")
+            window.close()
+            return
+        }
         return (
             <div className="administrator">
                 <AdministratorHead/>
@@ -25,6 +31,10 @@ class administrator extends Component {
                             <Route path="/administrator/user" component={User}/>
                             <Route path="/administrator/order" component={Order}/>
                             <Route path="/administrator/works" component={Work}/>
+                            <Route path="/administrator/message" component={Message}/>
+                            <Route path="/administrator/ad" component={Ad}/>
+                            <Route path="/administrator/service" component={Service}/>
+                            <Route path="/administrator/business" component={Business}/>
                             <Redirect from="/administrator" to="/administrator/user" exact/>
                         </Switch>
                     </div>

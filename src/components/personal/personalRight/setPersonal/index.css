@@ -26,7 +26,7 @@
     left: 50%;
     display: block;
     content: '修改头像';
-    font: .225rem "宋体";
+    font: .225rem "宋体" bold;
     color: #000;
     transform: translate(-50%,-50%);
 }
@@ -122,4 +122,9 @@
     padding-left: .125rem;
     margin-right: .4rem;
     vertical-align: middle;
+}
+.administrator-link{
+    font:.225rem "黑体";
+    text-align: right;
+    color: royalblue;
 }

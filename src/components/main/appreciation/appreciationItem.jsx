@@ -4,16 +4,46 @@ export default class appreciationItem extends Component {
     constructor(){
         super()
         this.state={
-            appreciationItem:[]
+            appreciationItem:[
+                {
+                    picture:"",
+                    content:"",
+                    name:""
+                },
+                {
+                    picture:"",
+                    content:"",
+                    name:""
+                },
+                {
+                    picture:"",
+                    content:"",
+                    name:""
+                },
+                {
+                    picture:"",
+                    content:"",
+                    name:""
+                },
+                {
+                    picture:"",
+                    content:"",
+                    name:""
+                },
+                {
+                    picture:"",
+                    content:"",
+                    name:""
+                }
+            ]
         }
         axios.get('/wk/Works_con/WorksSeek',{
             params:{
                 num:6
             }
         }).then((suc)=>{
-            console.log(suc.data)
             if(suc.data.return==="没有作品了哦") return
-            this.setState({appreciationItem:suc.data.contest})
+            this.setState({appreciationItem:Object.assign(this.state.appreciationItem,suc.data.contest)})
         },(err)=>{
             console.log(err)
         })
@@ -30,7 +60,7 @@ export default class appreciationItem extends Component {
                     this.state.appreciationItem.map((item,index)=>{
                         return(
                             <div className="appreciation-item" key={index}>
-                                <img className="appreciation-item-img" src={item.picture} alt={item.content}/>
+                                <img className="appreciation-item-img" src={item.picture} alt=""/>
                                 <p className="appreciation-item-words">{item.name}</p>
                             </div>
                         )

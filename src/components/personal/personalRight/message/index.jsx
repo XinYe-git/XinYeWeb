@@ -1,20 +1,7 @@
 import React, { Component } from 'react'
 import './index.css'
-import axios from 'axios'
-export default class message extends Component {
-    constructor(){
-        super()
-        this.state={
-            messageArr:[]
-        }
-    }
-    componentDidMount(){
-        axios.get("/qk/Message_Con/showusermess").then((suc)=>{
-            this.setState({messageArr:suc.data.message})
-        }).catch((err)=>{
-            console.log(err)
-        })
-    }
+import {connect} from 'react-redux'
+class message extends Component {
     render() {
         return (
             <div className="message">
@@ -25,7 +12,7 @@ export default class message extends Component {
                     <p className="message-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
                 </div> */}
                 {
-                    this.state.messageArr.map((item,index)=>{
+                    this.props.message.map((item,index)=>{
                         return(
                             <div className="message-item" key={index}>
                                 <img className="message-img" alt="" src={item.head1}/>
@@ -40,3 +27,7 @@ export default class message extends Component {
         )
     }
 }
+const storeToProps=(store)=>{
+    return store
+}
+export default connect(storeToProps)(message)

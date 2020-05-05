@@ -21,6 +21,12 @@ export default class worksItem extends Component {
         })
     }
     setStar(e){
+        //是否无作品
+        if(!e.target.dataset.id){
+            alert("无作品")
+            return
+        }
+        //判断是否登录
         if(document.cookie.indexOf('id')!==-1){
             e.persist()
             Axios.get('/wk/Collect_Con/CollectAdd',{
@@ -33,7 +39,6 @@ export default class worksItem extends Component {
                 }else if (suc.data.return==="取消收藏成功"){
                     e.target.classList.remove("collected")
                 }
-                console.log(suc.data)
             }).catch((err)=>{
                 console.log(err)
             })

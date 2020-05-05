@@ -10,11 +10,14 @@ export default class AttendanceSheet extends Component {
         this.day=this.date.getDate()
         this.state={
             checkArr:[],
-            checkDay:9
+            checkDay:0
         }
     }
     componentDidMount(){
         axios.get('/qk/Register_Con/read').then((suc)=>{
+            if(suc.data.error==="无用户本月签到数据！"){
+                return
+            }
             this.setState({checkArr:suc.data,checkDay:suc.data.length})
         }).catch((err)=>{
             console.log(err)

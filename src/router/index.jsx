@@ -5,10 +5,11 @@ import {Page404} from '../components'
 import Personal from './Personal'
 import {Administrator} from '../components'
 import store from '../redux/store'
-import {getPersonal} from '../redux/action'
+import {getPersonal,getMessage} from '../redux/action'
 export default class index extends Component {
     constructor(){
         super()
+        store.dispatch(getMessage())
         store.dispatch(getPersonal())
     }
     getCookie(cname)
@@ -18,7 +19,7 @@ export default class index extends Component {
         for(var i=0; i<ca.length; i++) 
             {
                 var c = ca[i].trim();
-                if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+                if (c.indexOf(name)===0) return c.substring(name.length,c.length);
             }
         return "";
     }

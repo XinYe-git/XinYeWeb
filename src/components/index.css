@@ -35,7 +35,7 @@ a {
 .Page {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
+    margin: .25rem auto;
     height: .5rem;
     width: 9.775rem;
 }

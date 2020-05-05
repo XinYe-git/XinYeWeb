@@ -53,7 +53,6 @@ class singnInForm extends Component {
                     break
                 case '登录成功':
                     this.props.getPersonal(()=>{window.location.reload()})
-                    
                     break
                 default:
                     alert('返回值未知')

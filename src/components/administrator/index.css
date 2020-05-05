@@ -1,5 +1,5 @@
 .administrator {
-    height: 22.125rem;
+    min-height: 22.125rem;
     background-color: #e7e7e1;
 }
 .administrator-outter{
@@ -9,6 +9,6 @@
 .administrator-router{
     float: left;
     width: 19.8rem;
-    height: 19.35rem;
+    min-height: 19.35rem;
     background-color: #bfdbc7;
 }

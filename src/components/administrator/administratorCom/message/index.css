@@ -1,0 +1,43 @@
+.message-title>label,.message-content>label {
+    display: inline-block;
+    padding-left: .1875rem;
+    width: 2rem;
+    font: .375rem/1.1875rem "黑体";
+    color: #000;
+    vertical-align: middle;
+}
+.message-title>input {
+    margin-left: .1875rem;
+    padding-left: .0625rem;
+    height: .875rem;
+    outline: none;
+    font: .375rem/.875rem "黑体";
+    color: #000;
+    vertical-align: middle;
+    border: .025rem solid #000;
+    background: none;
+}
+.message-content>textarea {
+    margin-left: .1875rem;
+    margin-bottom: .125rem;
+    padding-left: .0625rem;
+    width: 16.9125rem;
+    height: 6.65rem;
+    font: .375rem "黑体";
+    color: #000;
+    resize: none;
+    vertical-align: text-top;
+    background: none;
+    border: .025rem solid #000;
+    outline: none;
+}
+.message-button{
+    margin: 1.25rem auto;
+    width: 2.625rem;
+    height: 1.25rem;
+    font:.6rem/1.25rem "黑体";
+    text-align: center;
+    background-color: #32b16c;
+    box-shadow: 0 -0.025rem .125rem 0 #666;
+    cursor: pointer;
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './index.css'
-// import axios from 'axios'
+import axios from 'axios'
 export default class banner extends Component {
     constructor(){
         super()
@@ -10,6 +10,14 @@ export default class banner extends Component {
         this.flag=true
         this.Interval=""
         this.removeTransition=this.removeTransition.bind(this)
+        this.getBanner()
+    }
+    getBanner(){
+        axios.get("/qk/Advertise_Con/show_adve").then(suc=>{
+            console.log(suc)
+        }).catch(err=>{
+            console.log(err)
+        })
     }
     bannerLeft(){
         if(this.flag){

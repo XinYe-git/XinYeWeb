@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import axios from 'axios'
 import qs from 'qs'
 import {getPersonal} from '../../../../redux/action'
+import {Link} from 'react-router-dom'
 class setPersonal extends PureComponent {
     constructor(){
         super()
@@ -140,7 +141,6 @@ class setPersonal extends PureComponent {
     }
     //判断图片大小并展示，并且包装图片成可以发送的数据
     getImg(){
-        var read=new FileReader()
         var file=this.imgFile.files[0]
         if(file.size>2000000){
             alert("图片大小超过2M，请重新上传")
@@ -353,6 +353,7 @@ class setPersonal extends PureComponent {
                         </div>
                     }
                 </div>
+                {this.props.personalData.type!=="0"&&<Link className="administrator-link" to="/administrator" target="_blank">管理员界面</Link>}
             </div>
         )
     }

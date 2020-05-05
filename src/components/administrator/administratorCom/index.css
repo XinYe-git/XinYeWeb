@@ -15,7 +15,7 @@
 .administrator-Button{
     width: 5rem;
     position: absolute;
-    top: 90%;
+    bottom: .625rem;
     left: 50%;
     transform: translate(-50%,0);
     display: flex;
@@ -31,6 +31,7 @@
 }
 .administrator-data{
     position: relative;
+    padding-bottom: 1.875rem;
     height: 100%;
 }
 .administrator-head {
@@ -76,4 +77,8 @@
 .administrator-work-cell>img{
     height: 100%;
     width: 3.45rem;
+}
+.administrator-ad-cell>img{
+    height: 100%;
+    width: 9.1rem;
 }
