@@ -92,6 +92,7 @@
     height: .75rem;
     font-size: .3rem;
     line-height: .75rem;
+    position: relative;
 }
 .regUserName,.regMail,.regPassword{
     width: 4.375rem; 
@@ -138,7 +139,7 @@
     outline: none;
     cursor: pointer;
     background-color: #abb2e8;
-    border:  .0125rem solid #0068b7;
+    border: .0125rem solid #0068b7;
     border-radius: .75rem;
 }
 .regProtocol{
@@ -183,4 +184,13 @@
     color:#e50232;
     font-size: .25rem;
     font-weight: bold;
+}
+.chkEmail{
+    display: block;
+    position: absolute;
+    right: .25rem;
+    line-height: .225rem;
+    font-size: .225rem;
+    color: #f40;
+    padding-top: .1rem;
 }
