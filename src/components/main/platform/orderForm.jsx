@@ -31,7 +31,10 @@ class orderForm extends Component {
             status:"0",
             bid:this.props.orderData.id
         })).then(suc=>{
-            console.log(suc.data)
+            if(suc.data==="记录添加成功"){
+                window.scrollTo(0,0);
+                window.location.reload()
+            }
         }).catch(err=>{
             console.log(err)
         })

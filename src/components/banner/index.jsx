@@ -69,18 +69,18 @@ export default class banner extends Component {
             this.Interval=setInterval(this.bannerRight.bind(this),5000)
             this.bannerOut.addEventListener("mouseover",()=>{
                 clearInterval(this.Interval)
-                this.bannerL.classList.toggle("banner-opacity")
-                this.bannerR.classList.toggle("banner-opacity")
+                this.bannerL.classList.remove("banner-opacity")
+                this.bannerR.classList.remove("banner-opacity")
             })
             this.bannerOut.addEventListener("mouseout",()=>{
+                clearInterval(this.Interval)
                 this.Interval=setInterval(this.bannerRight.bind(this),5000)
-                this.bannerL.classList.toggle("banner-opacity")
-                this.bannerR.classList.toggle("banner-opacity")
+                this.bannerL.classList.add("banner-opacity")
+                this.bannerR.classList.add("banner-opacity")
             })
         })
     }
     componentWillUnmount(){
-        console.log(1)
         clearInterval(this.Interval)
         window.removeEventListener("resize",this.removeTransition)
     }
