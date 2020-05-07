@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
-import qs from "qs"
 export default class business extends Component {
     constructor(){
         super()

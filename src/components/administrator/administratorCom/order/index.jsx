@@ -10,6 +10,7 @@ export default class order extends Component {
             maxPage:1,
             orderArr:[],
             deleteArr:[],
+            idArr:[],
             changeOrder:{
                 id:"",
                 name:"",
@@ -24,19 +25,25 @@ export default class order extends Component {
         this.getUser(this.state.page)
     }
     getUser(page){
-        Axios.get("/ygq/user_task/index").then(suc=>{
-            if(suc.data.return==="当前页面无数据！"){
-                return
-            }
-            if(!Array.isArray(suc.data.message)){return}
+        Axios.all([
+            Axios.get("/ygq/user_task/index"),
+            Axios.get("/ygq/user_busi/index")
+        ]).then(Axios.spread((res1,res2)=>{
+            if(!Array.isArray(res1.data.message) || !Array.isArray(res2.data)){return}
+            let idArr=res2.data.map((item)=>{
+                return(
+                    {id:item.id,title:item.title}
+                )
+            })
             this.setState({
-                maxPage:suc.data.pages,
-                orderArr:suc.data.message.map(item=>{
+                maxPage:res1.data.pages,
+                orderArr:res1.data.message.map(item=>{
                     item.isChange=false
                     return item
-                })
+                }),
+                idArr
             })
-        }).catch(err=>{
+        })).catch(err=>{
             console.log(err)
         })
     }
@@ -157,6 +164,19 @@ export default class order extends Component {
             console.log(err)
         })
     }
+    getBid(id){
+        var obj=this.state.idArr.filter((item)=>{
+            return item.id===id
+        })[0]
+        if(!obj){return "未知种类"}
+        return obj.title
+    }
+    getBidTip(){
+        let strArr=this.state.idArr.map(item=>{
+            return <p>{`id:${item.id},种类:${item.title}`}</p>
+        })
+        return strArr
+    }
     render() {
         return (
             <div className="administrator-data">
@@ -195,7 +215,8 @@ export default class order extends Component {
                                             <div className="statusTip">0—未处理，1—已处理，2—已完成，3—未完成 </div>
                                         </div>
                                         <div className="administrator-cell">
-                                            <input type="text" className="order-type" data-type="bid" onChange={this.setChangeOrder.bind(this)} value={String(this.state.changeOrder.bid)||""}/>
+                                            <input type="number" className="order-type statusInput" data-type="bid" onChange={this.setChangeOrder.bind(this)} value={String(this.state.changeOrder.bid)||""} />
+                                            <div className="statusTip statusTip2">{this.getBidTip.call(this)}</div>
                                             <div className="changeData" onClick={this.changeData.bind(this)}>完成</div>
                                         </div>
                                     </div>
@@ -212,7 +233,7 @@ export default class order extends Component {
                                         <div className="administrator-cell">{item.money}</div>
                                         <div className="administrator-cell">{this.getStatue(item.status)}</div>
                                         <div className="administrator-cell">
-                                            {item.bid}
+                                            {this.getBid.call(this,item.bid)}
                                             <div className="changeData" onClick={this.changeBefore.bind(this,index)}>修改</div>
                                         </div>
                                     </div>

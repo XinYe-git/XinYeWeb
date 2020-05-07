@@ -133,11 +133,15 @@
 .statusTip{
     display: none;
     position: absolute;
-    width: 150%;
+    width: 1.875rem;
     font: .225rem "黑体";
     top: .775rem;
     left: 0;
     background-color: rgba(153, 153, 153, .5);
+    text-align: left;
+}
+.statusTip2{
+    left: 1rem!important;
 }
 .statusInput:focus+.statusTip{
     display: block;
