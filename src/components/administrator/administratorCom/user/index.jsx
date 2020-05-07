@@ -16,7 +16,6 @@ export default class user extends Component {
                 page
             }
         }).then(suc=>{
-            console.log(suc.data)
             this.setState({
                 maxPage:suc.data.pages,
                 userArr:suc.data.contect

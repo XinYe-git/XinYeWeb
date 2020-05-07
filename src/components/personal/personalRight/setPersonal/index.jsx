@@ -337,7 +337,7 @@ class setPersonal extends PureComponent {
                         </div>
                     }
                 </div>
-                <div className="DataOuteer">
+                {/* <div className="DataOuteer">
                     {
                         this.state.passWordsChange?
                         <div className="passWords">
@@ -352,7 +352,7 @@ class setPersonal extends PureComponent {
                             <div className="userChange" onClick={this.userChange}>修改</div>
                         </div>
                     }
-                </div>
+                </div> */}
                 {this.props.personalData.type!=="0"&&<Link className="administrator-link" to="/administrator" target="_blank">管理员界面</Link>}
             </div>
         )

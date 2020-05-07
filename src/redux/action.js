@@ -15,7 +15,6 @@ export const getPersonal= (callback=()=>{}) => dispatch =>{
             callback()
         }
     },(err)=>{
-        alert('用户信息获取失败')
         dispatch({
             type:get_personal_err_type
         })

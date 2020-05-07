@@ -57,7 +57,22 @@ export default class worksItem extends Component {
                 {
                     this.props.contest.map((item,index)=>{
                         return(
+                            item.content?
                             <div className="work-item" key={index}>
+                                <p className="work-words">{item.content} </p>
+                                <img src={item.picture} alt="" className="works-img"/>
+                                <div className="word-name">
+                                    {item.name}
+                                    {
+                                        this.state.collectedArr.indexOf(item.id)===-1?
+                                        <i onClick={this.setStar.bind(this)} className="word-icon" data-id={item.id} >&#xe60a;</i>
+                                        :
+                                        <i onClick={this.setStar.bind(this)} className="word-icon collected" data-id={item.id} >&#xe60a;</i>
+                                    }
+                                </div>
+                            </div>
+                            :
+                            <div className="work-item" style={{visibility:"hidden"}} key={index}>
                                 <p className="work-words">{item.content} </p>
                                 <img src={item.picture} alt="" className="works-img"/>
                                 <div className="word-name">

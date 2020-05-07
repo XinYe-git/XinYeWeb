@@ -15,6 +15,7 @@ export default class newsItem extends Component {
                 {
                     this.props.contest.map((item,index)=>{
                         return(
+                            item.title?
                             <div className="newsItem" key={index}>
                                 <div className="newItemTitle">{item.title}</div>
                                 <p className="newItemWords">
@@ -22,6 +23,15 @@ export default class newsItem extends Component {
                                 </p>
                                 <div className="newItemDate">{item.time}</div>
                                 <img className="newItemImg" src={item.image} alt=""/>
+                            </div>
+                            :
+                            <div className="newsItem" style={{visibility:'hidden'}} key={index}>
+                                <div >{item.title}</div>
+                                <p >
+                                {item.content}
+                                </p>
+                                <div>{item.time}</div>
+                                <img  src={item.image} alt=""/>
                             </div>
                         )
                     })

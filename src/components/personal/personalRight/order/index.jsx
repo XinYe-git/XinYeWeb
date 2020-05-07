@@ -9,8 +9,12 @@ export default class order extends Component {
         }
     }
     componentDidMount(){
-        Axios.get("/ygq/user_task/index").then(suc=>{
-            this.setState({orderArr:suc.data.message})
+        Axios.get("/ygq/user_task/showOne").then(suc=>{
+            if(suc.data.msg==="目前还没有订单"){
+                return
+            }
+            if(!Array.isArray(suc.data)){return}
+            this.setState({orderArr:suc.data})
         }).catch(err=>{
             console.log(err)
         })
