@@ -43,7 +43,6 @@ export default class platformItem extends Component {
     }
     toggleOrderForm(e){
         if(document.cookie.indexOf('id')!==-1){
-            console.log(e.target.dataset.title)
             this.setState({
                 isDisplay:!this.state.isDisplay,
                 orderData:Object.assign(
