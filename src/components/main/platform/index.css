@@ -4,6 +4,7 @@
 .platform-show{
     display: flex;
     justify-content:space-around;
+    height: 4.125rem;
 }
 .platform-item{
     position: relative;
@@ -52,4 +53,87 @@
     text-align: center;
     background: linear-gradient(180deg,#fde288,#dec368);
     box-shadow: 0rem -0.0515rem .15rem 0 #dbdbdb;
+}
+.orderForm{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 13.55rem;
+    height: 14rem;
+    background-color: #fff;
+    z-index: 5;
+    border: .0125rem solid #164915;
+    border-radius: .25rem;
+}
+.orderForm-head{
+    position: relative;
+    height: 1.5625rem;
+    width: 100%;
+    font: .6rem/1.5625rem "黑体";
+    text-align: center;
+    color: #000;
+    background-color: #c8fec9;
+    border-radius: .25rem .25rem 0 0;
+}
+.orderForm-item{
+    margin-top: .375rem;
+    margin-left: .3125rem;
+    font: .5rem "黑体";
+}
+.orderForm-item>.content-label{
+    vertical-align: top;
+}
+.orderForm-item>label{
+    display: inline-block;
+    width: 2.75rem;
+    vertical-align: middle;
+}
+.orderForm-item>textarea{
+    width: 10.125rem;
+    height: 5.625rem;
+    resize: none;
+    font: .4rem "黑体";
+    outline: none;
+}
+.orderForm-item>input{
+    width: 10.125rem;
+    height: 1.0625rem;
+    resize: none;
+    font: .4rem "黑体";
+    outline: none;
+}
+.orderForm-item>input[type="number"]{
+    -moz-appearance: textfield;
+}
+.orderForm-item>input::-webkit-outer-spin-button,
+.orderForm-item>input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.orderForm-sent{
+    margin: .625rem auto;
+    width: 3.6875rem;
+    height: 1.25rem;
+    font: .6rem/1.25rem "黑体";
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: .25rem;
+    cursor: pointer;
+    background-image: linear-gradient(180deg,#e6ecd8,#48fc4c);
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.orderForm-cancel {
+    position: absolute;
+    top: 50%;
+    right: .25rem;
+    transform: translate(0,-50%);
+    font: .6rem "黑体" bold;
+    cursor: pointer;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
 }

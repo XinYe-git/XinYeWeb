@@ -1,32 +1,10 @@
 import React, { Component } from 'react'
-import {Route,Redirect,Switch} from 'react-router-dom'
-import {
-    Header,
-    Banner,
-    Main,
-    Visit,
-    Show,
-    Footer,
-    Service,
-    SignIn
-} from './components'
+import Router from './router'
 export default class App extends Component {
     render() {
         return (
             <>
-                <Header/>
-                <Banner/>
-                <Switch>
-                    <Route path='/main'  component={Main}/>
-                    <Route path='/visit' component={Visit}/>
-                    <Route path='/show' component={Show}/>
-                    <Route path='/business' />
-                    <Route path='/service' component={Service}/>
-                    <Route path='/register' />
-                    <Redirect exact from="/" to="/main"/>
-                </Switch>
-                <Footer/>
-                <SignIn />
+              <Router></Router>
             </>
         )
     }

@@ -27,17 +27,23 @@
 .singnIn-item {
     margin-bottom: .5375rem;
     height: 1.025rem;
+    overflow: visible;
 }
 .singnIn-item>label {
     display: inline-block;
-    margin-right: 1.25rem;
+    margin-right: .3rem;
+    width: 2.3rem;
     font: .375rem/1.025rem "黑体";
     font-weight: bold;
     vertical-align: middle;
     letter-spacing: .05rem;
 }
-.password>label{
+.password>label,.forget-email>label{
     letter-spacing: .1rem;
+}
+.forget-email>input {
+    width: 3.4375rem!important;
+    font-size: .32rem!important;
 }
 .singnIn-item>input {
     padding: 0 .1875rem;
@@ -57,16 +63,18 @@
     margin-left: .4rem;
     width: 2.5rem;
     height: 1.025rem;
-    background-color: red;
+    background-color: #fff;
     vertical-align: middle;
+    cursor: pointer;
 }
 .signIn-forget{
     text-align: right;
     margin-right: .25rem;
 }
-.signIn-forget>a {
+.signIn-forget>span {
     font: .375rem "黑体";
     color: #65dffe;
+    cursor: pointer;
 }
 .signIn-submit {
     display: block;
@@ -80,7 +88,19 @@
     outline: none;
     border: .025rem solid #0068b7;
     border-radius: .1875rem;
+    cursor: pointer;
 }
-.signIn-none{
-    display: none;
+.sentForgetEmail {
+    margin-left: .3125rem;
+    display: inline-block;
+    width: 1.8125rem;
+    height: .825rem;
+    font: .375rem/.825rem "黑体";
+    text-align: center;
+    vertical-align: middle;
+    background-color: #abb2e8;
+    border: .025rem solid #0068b7!important;
+    border-radius: .1875rem;
+    cursor: pointer;
+    overflow: visible!important;
 }

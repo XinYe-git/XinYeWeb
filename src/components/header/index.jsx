@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Logo from './logo'
 import Nav from './nav'
 import Reg from './regButton'
+import Personal from './personalButton'
 import './index.css'
 export default class index extends Component {
     render() {
@@ -10,9 +11,16 @@ export default class index extends Component {
                 <div className="w">
                     <Logo/>
                     <Nav/>
-                    <Reg/>
+                    {
+                        //用cookie判断，这样快些
+                        document.cookie.indexOf('id')!==-1?
+                        <Personal/>
+                        :
+                        <Reg/>
+                    }
                 </div>
             </div>
         )
     }
 }
+

@@ -1,0 +1,196 @@
+.regleft{
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+.regright{
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 100%;
+}
+
+.bgBox{
+    width: 100%;
+    height: 100%;
+    /* 让div撑满屏幕 */
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    background: url(./background.png) no-repeat center fixed; 
+    background-size: cover;
+}
+.reglogo{  
+    position: relative;
+    top: 1rem;
+    left: 2.875rem;
+    font-size: .275rem;
+    width: 3.75rem;
+    letter-spacing: .1rem;
+    font-family: '黑体';
+}
+.reglogo:before{    
+    content: '';
+    width: .775rem;
+    height: .775rem;
+    position: absolute;
+    top: -0.075rem;
+    left: -1rem;
+    background: url(./XY-logo.png) no-repeat center;
+    background-size: cover;
+}
+.regText{
+    position: absolute;
+    top: 3.4375rem;
+    left: 4.25rem;
+}
+.regText h1{
+    font-size: .8125rem;
+    letter-spacing: .35rem;
+}
+.regText p{
+    font-weight: 500;
+    font-family: '黑体';
+    font-size: .375rem;
+    margin-top: .875rem;
+    margin-left: .375rem;
+    letter-spacing: .125rem;
+}
+.regInfor{
+    float: right;
+    width: 7.625rem;
+    height: 9.5rem;
+    border: .0125rem solid #7a845c;
+    border-radius: .625rem;
+    background-color: rgba(256, 256, 256, 0.2);
+    margin-top: .625rem;
+    margin-right: 2rem;
+    padding-left: .8125rem;
+    box-shadow: -0.0375rem .0375rem .05rem #b0eb74;
+}
+.regInfor > h2{
+    font-size: .4rem;
+    margin-top: .5rem;
+}
+.toLoding{
+    display: block;
+    font-size: .175rem;
+    color: #a29f9f;
+    margin-top: .1875rem;
+}
+/* .regIfm{
+    margin-top: .5rem;
+} */
+.toLoding > span{
+    margin-left: .1875rem;
+    color: #5878f1;
+}
+.reginputBox{
+    margin-top: 0.5rem;
+    width: 6.125rem;
+    height: .75rem;
+    font-size: .3rem;
+    line-height: .75rem;
+    position: relative;
+}
+.regUserName,.regMail,.regPassword{
+    width: 4.375rem; 
+    float: right;
+}
+.regCaptcha{
+    width: 2.5rem;
+    margin-right: .1rem;
+    float: left;
+    margin-left: .655rem;
+}
+.reginputBox .reginputMod{
+    height: .75rem;
+    border: .0125rem solid #6c706d;
+    border-radius: .0625rem;
+    outline: none;
+    padding-left: .15rem;
+}
+.reginputBox span{
+    display: block;
+    float: left;
+}
+.regCaptchaimg{
+    display: flex;
+    float: right;
+    width: 1.625rem;
+    height: .75rem;
+    color: #5878f1;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: .0125rem solid #0068b7 ;
+}
+.regCaptchaimg span{
+    font-size: .225rem;
+    cursor: pointer;
+}
+.regSubmit{
+    width: 6.375rem;
+    height: .75rem;
+    font-size: .225rem;
+    margin-top: .75rem;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    background-color: #abb2e8;
+    border: .0125rem solid #0068b7;
+    border-radius: .75rem;
+}
+.regProtocol{
+    margin-top: .25rem;
+}
+.regProtocol span a{
+    color: #5878f1;
+}
+.regProtocol span a:hover{
+    text-decoration: underline;
+}
+
+.regProtocol input[type="checkbox"]{
+    width: .25rem;
+    height: .25rem;
+    opacity: 0.5;
+    background: #fff;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle; 
+    line-height: .225rem;
+    position: relative;
+}
+.regProtocol input[type="checkbox"]::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    border: .0125rem solid #d9d9d9
+}
+.regProtocol input[type="checkbox"]:checked::before{
+    content: "\2713";
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    border: .0125rem solid #e50232;
+    color:#e50232;
+    font-size: .25rem;
+    font-weight: bold;
+}
+.chkEmail{
+    display: block;
+    position: absolute;
+    right: .25rem;
+    line-height: .225rem;
+    font-size: .225rem;
+    color: #f40;
+    padding-top: .1rem;
+}

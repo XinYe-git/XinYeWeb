@@ -1,0 +1,39 @@
+.Order-title{
+    display: table;
+    padding: 0 1rem;
+    width: 100%;
+    border-bottom: .0375rem solid #e7e7e1;
+}
+.Order-title-tr {
+    display: table-row;
+    height: .9rem;
+    font:.25rem/.9rem "宋体";
+    color: #000;
+}
+.Order-title-cell {
+    display: table-cell;
+    text-align: center;
+    width: 33%;
+}
+.Order-body{
+    display: table;
+    margin-top: -.3rem;
+    padding: 0 1rem;
+    width: 100%;
+    border-spacing:0 .3rem;
+}
+.order-item{
+    display: table-row;
+    height: .875rem;
+}
+.order-content,.order-state,.order-price{
+    display: table-cell;
+    width: 33%;
+    font:.2rem "宋体";
+    vertical-align: middle;
+    color: #000;
+    background-color: #bdfecd;
+}
+.order-state,.order-price{
+    text-align: center;
+}

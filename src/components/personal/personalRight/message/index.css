@@ -1,0 +1,26 @@
+.message-item{
+    margin: .3125rem 0 0 .4125rem;
+    padding-left: .875rem;
+    position: relative;
+    width: 13.125rem;
+    height: 1.25rem;
+}
+.message-title{
+    font: .225rem "宋体";
+    color: #010101;
+}
+.message-date,.message-content {
+    margin-top: .125rem;
+    font: .2rem "宋体";
+    color: #010101;
+}
+.message-img{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: .6875rem;
+    height: .6875rem;
+    border-radius: .34375rem;
+    background-color: #e7e7e1;
+}
