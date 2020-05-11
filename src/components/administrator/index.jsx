@@ -12,7 +12,8 @@ import {
     Message,
     Ad,
     Service,
-    Business
+    Business,
+    News
 } from './administratorCom'
 class administrator extends Component {
     render() {
@@ -35,6 +36,7 @@ class administrator extends Component {
                             <Route path="/administrator/ad" component={Ad}/>
                             <Route path="/administrator/service" component={Service}/>
                             <Route path="/administrator/business" component={Business}/>
+                            <Route path="/administrator/news" component={News}/>
                             <Redirect from="/administrator" to="/administrator/user" exact/>
                         </Switch>
                     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Office from './office'
 import {Route,Switch,Redirect} from 'react-router-dom'
-import {Page404} from '../components'
+import {Page404,Register} from '../components'
 import Personal from './Personal'
 import {Administrator} from '../components'
 import store from '../redux/store'
@@ -35,7 +35,7 @@ export default class index extends Component {
         return (
             <div>
                 <Switch>
-                    <Route path='/register' />
+                    <Route path='/register' component={Register} exact/>
                     {document.cookie.indexOf('id')!==-1?
                         <Route path="/administrator" component={Administrator}/>
                     :

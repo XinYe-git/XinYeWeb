@@ -85,7 +85,7 @@ class singnInForm extends Component {
                         <input type="text" name="test" onChange={this.bindData.bind(this)}/>
                         <img src={this.state.captcha} alt="" onClick={this.captchaAgain.bind(this)}/>
                     </div>
-                    <div className="signIn-forget"><a href="/#">忘记密码?</a></div>
+                    <div className="signIn-forget"><span onClick={()=>{this.props.changeStatus(2)}}>忘记密码?</span></div>
                     <input type="submit" value="登录" className="signIn-submit"/>
                 </form>
             </>

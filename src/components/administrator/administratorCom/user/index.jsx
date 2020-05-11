@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
-export default class user extends Component {
+import {connect} from 'react-redux'
+class user extends Component {
     constructor(){
         super()
         this.state={
@@ -35,6 +36,31 @@ export default class user extends Component {
             document.documentElement.scrollTop = 0
             window.pageYOffset = 0
         })
+    }
+    canDelete(type){
+        switch(type){
+            case "0":
+                return true
+            case "1":
+                if(this.props.personalData.type==="2")
+                    return true
+                return false
+            default:
+                return false
+        }
+    }
+    delete(e){
+        if(window.confirm("是否要删除")){
+            Axios.get("/wk/User_Con/DeleteUser",{
+                params:{
+                    id:e.target.dataset.id
+                }
+            }).then(suc=>{
+                window.location.reload()
+            }).catch(err=>{
+                console.log(err)
+            })
+        }
     }
     render() {
         return (
@@ -77,7 +103,10 @@ export default class user extends Component {
                                         <div className="administrator-cell">{item.professions}</div>
                                         <div className="administrator-cell">{item.tele}</div>
                                         <div className="administrator-cell">{item.address_sheng}</div>
-                                        <div className="administrator-cell">{item.register}</div>
+                                        <div className="administrator-cell">
+                                            {item.register}
+                                            {this.canDelete(item.type) && <div className="changeData" data-id={item.id} onClick={this.delete.bind(this)}>删除</div>}
+                                        </div>
                                     </div>
                                 )
                             })
@@ -91,3 +120,7 @@ export default class user extends Component {
         )
     }
 }
+const storeToProps=(store)=>{
+    return store
+}
+export default connect(storeToProps)(user)
