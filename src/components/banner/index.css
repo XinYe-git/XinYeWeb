@@ -15,17 +15,15 @@
     display: block;
     float: left;
     height: 100%;
-    width: 25%;
+    width: 25.266rem;
 }
-.banner1,.banner2,.banner3{
+.bannerImg{
+    display: block;
     height: 100%;
     width: 100%;
     background-size: cover;
     background-position: center;
 }
-.banner1 {background-image: url('./banner1.png');}
-.banner2 {background-image: url('./banner2.png');}
-.banner3 {background-image: url('./banner3.png');}
 .banner-left{
     position: absolute;
     left: .5rem;

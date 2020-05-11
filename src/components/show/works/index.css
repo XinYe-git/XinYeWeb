@@ -10,6 +10,7 @@
 }
 .work-words,.PreviousOffice-words{
     margin-left: 8.475rem;
+    height: 6.425rem; 
     width: 11rem;
     font: .3rem/.8rem "宋体";
     word-spacing:.1rem;
@@ -21,7 +22,7 @@
     left: .9625rem;
     width: 6.85rem;
     height: 6.425rem; 
-    background-color: red;
+    background-color: #fff;
 }
 .word-name,.PreviousOffice-name {
     margin-top: .25rem;

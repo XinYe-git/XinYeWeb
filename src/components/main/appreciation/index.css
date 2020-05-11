@@ -1,6 +1,7 @@
 .appreciation{
     position: relative;
     margin-top: .25rem;
+    margin-bottom: .725rem;;
 }
 .appreciation-show {
     display: flex;
@@ -12,9 +13,10 @@
     margin-bottom: .1875rem;
 }
 .appreciation-item-img{
+    display: block;
     width: 6.8375rem;
     height: 6.4125rem;
-    background-color: rosybrown;
+    background-color: #fff;
 }
 .appreciation-item-words{
     margin-top: .1875rem;

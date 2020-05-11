@@ -5,9 +5,8 @@ export default class footerFt extends Component {
         return (
             <ul className="footer-ft">
                 <li className="footer-ft-item">2020新叶</li>
-                <li className="footer-ft-item">（京）-经营性2020</li>
-                <li className="footer-ft-item">京公网安备00000000000000号</li>
-                <li className="footer-ft-item">京ICP证000000号</li>
+                <li className="footer-ft-item">（湘）-经营性2020</li>
+                <li className="footer-ft-item"><a href="http://www.beian.miit.gov.cn/" target="_black">湘ICP证200005551号</a></li>
             </ul>
         )
     }

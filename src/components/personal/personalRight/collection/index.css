@@ -1,0 +1,21 @@
+.collection {
+    margin: 0 .25rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+.collection-item{
+    margin-bottom: .4375rem;
+    width: 4.0625rem;
+}
+.collection-item>img{
+    width: 4.0625rem;
+    height: 4.0625rem;
+    background-color: #fff;
+}
+.collection-item-name {
+    margin-top: .1875rem;
+    text-align: center;
+    font: .225rem "宋体";
+    color: #000000;
+}

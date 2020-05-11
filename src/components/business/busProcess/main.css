@@ -1,0 +1,99 @@
+.mt50{
+    margin-top: .625rem;
+}
+.pb50{
+    padding-bottom: 1.25rem;
+}
+
+.BusProBox{
+    margin-top: .325rem;
+    text-align: center;
+}
+.BusProBox h1{
+    font-size: .625rem;
+    color: #4de75b;
+}
+.BusProtitle{
+    display: block;
+    margin: 0 auto;
+    width: 2.9375rem;
+    height: .75rem;
+    margin-top: .125rem;
+    background-color: #4de75b ;
+    border: .0125rem dotted #000;
+}
+.BusProtitle > span{
+    display: block;
+    margin: .015rem auto;
+    width: 2.6875rem;
+    height: .7rem;
+    font: 0.35rem/1.125rem "黑体";
+    line-height: 0.645rem;
+    background-color: #fff;
+    border: .0125rem dotted #000;
+}
+.BusProtitwo{
+    display: block;
+    position: relative;
+    margin: 0  auto;
+    margin-top: .125rem;
+    width: 7.125rem;
+    height: .75rem;
+    text-align: center;
+    font-size: .365rem;
+    line-height: .75rem;
+    font-weight: 500;
+}
+.BusProtitwo:after{
+    content: '';
+    position: absolute;
+    width: 7.125rem;
+    height: .75rem;
+    bottom: 0;
+    left: 0;
+    background-image: url("./pencil.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.BusProDeta{
+    margin-top: .5rem;
+    width: 17rem;
+    padding-left: .375rem;
+    padding-right: .375rem; 
+    padding-bottom: .125rem;
+    text-align: left;
+    border: .05rem dashed transparent;
+    /* background: linear-gradient(#fff,#fff) padding-box,
+    repeating-linear-gradient(-45deg,#4de75b 0, #4de75b .1875rem,#fff .125rem, #fff .375rem); */
+    background: linear-gradient(#fff,#fff) padding-box,
+    repeating-linear-gradient(-45deg,#4de75b 0, #4de75b .1875rem,#fff .125rem, #fff .315rem);
+    border-radius: .4rem;
+    position: relative;
+}
+
+.foliageLeft:before{
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: -0.3rem;
+    width: 1.75rem;
+    height: 1.3125rem;
+    background: url("./leaf.png") no-repeat;
+    background-size: cover;
+}
+.foliageRight:before{
+    content: '';
+    width: 1.75rem;
+    height: 1.3125rem;
+    position: absolute;
+    top: -1rem;
+    right: -0.3rem;
+    background: url("./leaf02.png") no-repeat;
+    background-size: cover;
+}
+.BusProDeta > p{
+    display: block;
+    padding-top: .125rem;
+    margin: 0;
+    line-height: 0.65rem;
+}

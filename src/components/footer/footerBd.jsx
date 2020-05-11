@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import {Link} from 'react-router-dom'
 export default class footerBd extends Component {
     render() {
         return (
@@ -10,14 +10,14 @@ export default class footerBd extends Component {
                     </a>
                 </li>
                 <li className="footer-bd-item">
-                    <a href="/" className="footer-bd-item-a">
+                    <Link to="/visit/introduction" className="footer-bd-item-a">
                         <span>关于我们</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="footer-bd-item">
-                    <a href="/" className="footer-bd-item-a">
+                    <Link to="/visit/join" className="footer-bd-item-a">
                         <span>加入新叶</span>
-                    </a>
+                    </Link>
                 </li>
                 <li className="footer-bd-item">
                     <a href="/" className="footer-bd-item-a">

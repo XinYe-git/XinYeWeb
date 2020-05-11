@@ -1,36 +1,23 @@
 import React, { Component } from 'react'
-import PubSub from 'pubsub-js'
 import "./index.css"
+import SingnInForm from './singnInForm'
+import GetPassWd from './getPasswd'
 export default class signIn extends Component {
     constructor(){
         super()
-        PubSub.publish("toggleShow",this.toggleShow.bind(this))
+        this.state={
+            status:1
+        }
     }
-    toggleShow(){
-        this.signIn.classList.toggle("signIn-none")
+    changeStatus(index){
+        this.setState({status:index})
     }
     render() {
         return (
-            <div className="signIn signIn-none" onClick={this.toggleShow.bind(this)} ref={dom=>this.signIn=dom}>
+            <div className="signIn" onClick={this.props.toggleShow} ref={dom=>this.signIn=dom}>
                 <div className="singnIn-inner" onClick={(e)=>{e.stopPropagation()}}>
-                    <p className="singnIn-title">登录</p>
-                    <form action="" method="post">
-                        <div className="passName singnIn-item">
-                            <label htmlFor="">用户名</label>
-                            <input type="text" name="passName"/>
-                        </div>
-                        <div className="password singnIn-item">
-                            <label htmlFor="">密  码</label>
-                            <input type="password" name="passWord"/>
-                        </div>
-                        <div className="captcha singnIn-item">
-                            <label htmlFor="">验证码</label>
-                            <input type="text" name="captcha"/>
-                            <img src="" alt=""/>
-                        </div>
-                        <div className="signIn-forget"><a href="">忘记密码?</a></div>
-                        <input type="submit" value="登录" className="signIn-submit"/>
-                    </form>
+                    {this.state.status===1 && <SingnInForm toggleShow={this.props.toggleShow} changeStatus={this.changeStatus.bind(this)}/>}
+                    {this.state.status===2 && <GetPassWd toggleShow={this.props.toggleShow} changeStatus={this.changeStatus.bind(this)}/>}
                 </div>
             </div>
         )
