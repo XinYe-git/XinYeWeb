@@ -8,7 +8,9 @@ import {
     Visit,
     Show,
     Footer,
-    SignIn
+    SignIn,
+    Business,
+    Service
 } from '../components'
 export default class office extends Component {
     constructor(){
@@ -33,8 +35,8 @@ export default class office extends Component {
                     <Route path='/main'  component={Main} exact/>
                     <Route path='/visit' component={Visit} />
                     <Route path='/show' component={Show} />
-                    <Route path='/business' exact/>
-                    <Route path='/service'  exact/>
+                    <Route path='/business' component={Business}/>
+                    <Route path='/service'  component={Service}/>
                     <Redirect exact from="/" to="/main"/>
                     <Redirect exact to="/404"/>
                 </Switch>

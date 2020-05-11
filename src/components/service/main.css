@@ -1,0 +1,120 @@
+.serCentlay{
+    margin: 0 auto;
+}
+.contactBox{
+    width: 20.25rem;
+    /* height: 15rem; */
+    padding: 0 2.25rem;
+    padding-bottom: .6875rem;
+    background-color: #d2e0ea;
+    box-shadow: -0.0625rem  .25rem .1875rem #aaf4d2;
+}
+.contactTitle{
+    display: block;
+    font-size: .625rem;  
+    padding-bottom: .25rem; 
+    color: #4de75b;
+    position: relative;
+}
+.superFont{
+    display: block;
+    color: #000;
+    font-size: .435rem;
+    position: absolute;
+    top: -0.0625rem;
+}
+.contactMap{
+    font-family: "黑体";
+    position: relative;
+    height: 5.5rem;
+}
+.map{
+    display: block;
+    position: absolute;
+    top: .1875rem;
+    right: 0;
+    width: 8.125rem;
+    height: 5.25rem;
+}
+.contactDeta h2{
+    font-size: .4375rem;
+}
+.address{
+    font-size: .3rem;
+    color:#595555;
+    margin: .4375rem 0;
+}
+.Feedback{
+    margin-top: .625rem;
+}
+.submitBox{
+    width: 11.875rem;
+    margin-top: .5rem;
+}
+.conMod{
+    border: none;
+    outline: none;
+    width: 4.1875rem;
+    height: 1.0625rem;
+    color: #595555;
+    font-family: '黑体';
+    padding-left: 1.125rem;
+    font-size: .3rem;
+    line-height: 1.065rem;
+    background-color: #e8ecef;
+}
+.conPhone,.feedTextF{
+    float: left;
+    position: relative;
+}
+.conCity{
+    float: right;
+    position: relative;
+}
+.conPhoneSpan{
+    position: absolute;
+    left: .25rem;
+    top:50%;
+    transform:translateY(-54%);
+    font-size: .3rem;
+    color: #595555;
+    user-select: none;
+}
+.feedTextF{
+    margin-top: 1rem;
+}
+.feedBackText{
+    border: none;
+    outline: none;
+    resize: none;
+    float: left;
+    width: 11.875rem;
+    height: 4.875rem;
+    font-size: .3rem;
+    line-height: 0.5rem;
+    color: #595555;
+    font-family: '黑体';
+    background-color: #e8ecef;
+    padding-left: .9375rem;
+    padding-top: .1rem;
+}
+
+.feedPrompt{
+    position: absolute;
+    top: .125rem;
+    left: .0625rem;
+    font-size: .3rem;
+    color: #595555;
+    font-family: '黑体';
+    user-select: none;
+}
+.subBoxBtn{
+    float: left;
+    width: 3.0625rem;
+    height: .9375rem;
+    margin-top: .9375rem;
+    font-size: .3rem;
+    border: .0125rem dotted #000;
+    color: #fff;
+    background-color: #2da6f3;
+}
