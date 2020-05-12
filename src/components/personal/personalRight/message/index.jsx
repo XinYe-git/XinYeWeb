@@ -15,7 +15,7 @@ class message extends Component {
                     this.props.message.map((item,index)=>{
                         return(
                             <div className="message-item" key={index}>
-                                <img className="message-img" alt="" src={item.head1}/>
+                                <img className="message-img" alt="" src={this.defaultsImg+"/"+item.head1}/>
                                 <p className="message-title">公告</p>
                                 <p className="message-date">{item.time}</p>
                                 <p className="message-content">{item.content}</p>

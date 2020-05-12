@@ -198,7 +198,7 @@ export default class ad extends Component {
                                             <input type="checkbox" name="work" value={item.id} className="deletCheck" onChange={this.setDeleteArr.bind(this)}/>
                                         </div>
                                         <div className="administrator-cell administrator-ad-cell">
-                                            <img src={item.link} alt=""/>
+                                            <img src={this.defaultsImg+item.link} alt=""/>
                                             {/* <div className="changeData" onClick={this.changeBefore.bind(this,index)}>修改</div> */}
                                         </div>
                                     </div>

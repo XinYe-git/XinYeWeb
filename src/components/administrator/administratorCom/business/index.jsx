@@ -140,7 +140,7 @@ export default class business extends Component {
                                         <div className="administrator-cell">{item.title}</div>
                                         <div className="administrator-cell"><p>{item.explains}</p></div>
                                         <div className="administrator-cell administrator-work-cell">
-                                            <img src={item.image} alt=""/>
+                                            <img src={this.defaultsImg+item.image} alt=""/>
                                             <div className="changeData" onClick={this.changeBefore.bind(this,index)}>修改</div>
                                         </div>
                                     </div>

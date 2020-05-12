@@ -204,7 +204,7 @@ export default class news extends Component {
                                             {item.content}
                                         </div>
                                         <div className="administrator-cell administrator-ad-cell">
-                                            <img src={item.image} alt=""/>
+                                            <img src={this.defaultsImg+item.image} alt=""/>
                                             {/* <div className="changeData" onClick={this.changeBefore.bind(this,index)}>修改</div> */}
                                         </div>
                                     </div>

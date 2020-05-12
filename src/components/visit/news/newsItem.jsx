@@ -22,7 +22,7 @@ export default class newsItem extends Component {
                                 {item.content}
                                 </p>
                                 <div className="newItemDate">{item.time}</div>
-                                <img className="newItemImg" src={item.image} alt=""/>
+                                <img className="newItemImg" src={item.image && this.defaultsImg+item.image} alt=""/>
                             </div>
                             :
                             <div className="newsItem" style={{visibility:'hidden'}} key={index}>
@@ -31,7 +31,7 @@ export default class newsItem extends Component {
                                 {item.content}
                                 </p>
                                 <div>{item.time}</div>
-                                <img  src={item.image} alt=""/>
+                                <img  src={item.image && this.defaultsImg+item.image} alt=""/>
                             </div>
                         )
                     })

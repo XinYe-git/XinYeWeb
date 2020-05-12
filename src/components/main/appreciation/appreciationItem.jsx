@@ -60,7 +60,7 @@ export default class appreciationItem extends Component {
                     this.state.appreciationItem.map((item,index)=>{
                         return(
                             <div className="appreciation-item" key={index}>
-                                <img className="appreciation-item-img" src={item.picture} alt=""/>
+                                <img className="appreciation-item-img" src={item.picture && this.defaultsImg+item.picture} alt=""/>
                                 <p className="appreciation-item-words">{item.name}</p>
                             </div>
                         )

@@ -29,7 +29,7 @@ export default class collection extends Component {
                     this.state.collectionArr.map((item,index)=>{
                         return(
                             <div className="collection-item" key={index}>
-                                <img src={item[0].picture} alt=""/>
+                                <img src={this.defaultsImg+item[0].picture} alt=""/>
                                 <p className="collection-item-name">{item[0].name}</p>
                             </div>
                         )

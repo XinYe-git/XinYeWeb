@@ -1,4 +1,5 @@
 import {get_personal_type,init_personal_type,get_personal_err_type} from '../action.js'
+import {defaultsImg} from '../../App'
 const initState={
 
 }
@@ -6,7 +7,7 @@ const initState={
 export default function personalData(state=initState,action){
     switch(action.type){
         case get_personal_type:
-            action.data.head=action.data.head+"?temp=" + Math.random()
+            action.data.head=defaultsImg+action.data.head+"?temp=" + Math.random()
             return Object.assign({},state,action.data)
         case get_personal_err_type:
             return state

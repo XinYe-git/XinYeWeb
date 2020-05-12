@@ -156,7 +156,7 @@ export default class work extends Component {
                                             <input type="checkbox" name="work" value={item.id} className="deletCheck" onChange={this.setDeleteArr.bind(this)}/>
                                         </div>
                                         <div className="administrator-cell"><p>{item.content}</p></div>
-                                        <div className="administrator-cell administrator-work-cell"><img src={item.picture} alt=""/></div>
+                                        <div className="administrator-cell administrator-work-cell"><img src={this.defaultsImg+item.picture} alt=""/></div>
                                         <div className="administrator-cell">{item.time}</div>
                                         <div className="administrator-cell">{item.designation}</div>
                                     </div>

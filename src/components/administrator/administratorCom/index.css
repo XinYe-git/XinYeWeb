@@ -18,6 +18,7 @@
     bottom: .625rem;
     left: 50%;
     transform: translate(-50%,0);
+    -webkit-transform: translate(-50%,0);
     display: flex;
     justify-content: space-around;
 }
@@ -45,6 +46,7 @@
     top: 50%;
     left: .125rem;
     transform: translate(0,-50%);
+    -webkit-transform: translate(0,-50%);
 }
 .administrator-cell {
     position: relative;
@@ -120,10 +122,11 @@
 .changeData {
     position: absolute;
     top: 50%;
-    right: .25rem;
+    right: .15rem;
     font: .325rem "黑体";
     color: royalblue;
-    transform: translate(0,-50%);
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     cursor: pointer;
 }
 .order-type {

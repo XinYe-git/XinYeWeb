@@ -96,7 +96,7 @@ class user extends Component {
                             this.state.userArr.map((item,index)=>{
                                 return(
                                     <div className="administrator-tr" key={index}>
-                                        <div className="administrator-cell"><img src={item.head} alt=""/></div>
+                                        <div className="administrator-cell"><img src={this.defaultsImg+"/"+item.head} alt=""/></div>
                                         <div className="administrator-cell">{item.name}</div>
                                         <div className="administrator-cell administrator-user-emil">{item.mail}</div>
                                         <div className="administrator-cell">{item.sex==="0"?"男":"女"}</div>

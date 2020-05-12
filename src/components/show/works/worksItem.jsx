@@ -60,7 +60,7 @@ export default class worksItem extends Component {
                             item.content?
                             <div className="work-item" key={index}>
                                 <p className="work-words">{item.content} </p>
-                                <img src={item.picture} alt="" className="works-img"/>
+                                <img src={item.picture && this.defaultsImg+item.picture} alt="" className="works-img"/>
                                 <div className="word-name">
                                     {item.name}
                                     {
@@ -74,7 +74,7 @@ export default class worksItem extends Component {
                             :
                             <div className="work-item" style={{visibility:"hidden"}} key={index}>
                                 <p className="work-words">{item.content} </p>
-                                <img src={item.picture} alt="" className="works-img"/>
+                                <img src={item.picture && this.defaultsImg+item.picture} alt="" className="works-img"/>
                                 <div className="word-name">
                                     {item.name}
                                     {

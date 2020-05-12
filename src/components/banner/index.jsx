@@ -91,11 +91,11 @@ export default class banner extends Component {
                     {
                         this.state.bannerArr.map((item,index)=>{
                             return(
-                                <a href="/" key={index+"item"}><img src={item} alt="" className="bannerImg"/></a>
+                                <a href="/" key={index+"item"}><img src={this.defaultsImg+item} alt="" className="bannerImg"/></a>
                             )
                         })
                     }
-                    <a href="/"><img src={this.state.bannerArr[0]} alt="" className="bannerImg"/></a>
+                    {this.state.bannerArr[0] &&<a href="/"><img src={this.defaultsImg+this.state.bannerArr[0]} alt="" className="bannerImg"/></a>}
                 </div>
                 <div className='banner-left banner-opacity' onClick={this.bannerLeft.bind(this)} ref={dom=>this.bannerL=dom}></div>
                 <div className="banner-right banner-opacity" onClick={this.bannerRight.bind(this)} ref={dom=>this.bannerR=dom}></div>
