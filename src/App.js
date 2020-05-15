@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Router from './router'
 import axios from "axios"
-export const defaultsImg='http://jamkang.club/'
+export const defaultsImg='/api'
 export default class App extends Component {
     constructor(){
         super()

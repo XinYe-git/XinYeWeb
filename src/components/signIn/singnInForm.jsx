@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {getPersonal} from '../../redux/action'
+import qs from "qs"
 import {connect} from 'react-redux'
 class singnInForm extends Component {
     constructor(){
@@ -36,29 +37,14 @@ class singnInForm extends Component {
     //发送表单数据
     setFormData(e){
         e.preventDefault()
-        axios.post("/wk/User_Con/LoginDeal",{
-            withCredentials:true,
-            // crossDomain:true,
-            headers: {
-                'Content-Type':'application/x-www-form-urlencoded'
-                },
-            data:{
-                name:this.state.name,
-                passwd:this.state.passwd,
-                test:this.state.test
-            },
-            transformRequest: [function (data) {
-                // Do whatever you want to transform the data
-                let ret = ''
-                for (let it in data) {
-                  ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-                }
-                return ret
-              }],
-        }).then((suc)=>{
+        axios.post("/wk/User_Con/LoginDeal",qs.stringify({
+            name:this.state.name,
+            passwd:this.state.passwd,
+            test:this.state.test
+        })).then((suc)=>{
             switch(suc.data.return){
                 case '验证码不对':
-                    // this.captchaAgain()
+                    this.captchaAgain()
                     alert('验证码不对,请重新输入')
                     break
                 case '用户或者密码不正确，请检查大小写':
