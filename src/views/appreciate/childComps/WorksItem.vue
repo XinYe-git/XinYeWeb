@@ -19,6 +19,7 @@
     methods:{
       collectClick(){
         this.collect=!this.collect
+        // console.log(item);
       }
     }
 

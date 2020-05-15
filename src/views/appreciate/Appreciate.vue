@@ -4,29 +4,10 @@
     <swiper-item v-for="(item,index) in backgroundSrc">
       <img :src="`http://jamkang.club/${item}`">
     </swiper-item>
-    <!--<swiper-item>-->
-      <!--<img src="~assets/img/home/lunbo1.png">-->
-    <!--</swiper-item>-->
-    <!--<swiper-item>-->
-      <!--<img src="~assets/img/home/lunbo2.png">-->
-    <!--</swiper-item>-->
-    <!--<swiper-item>-->
-      <!--<img src="~assets/img/home/lunbo1.png">-->
-    <!--</swiper-item>-->
-    <!--<swiper-item>-->
-      <!--<img src="~assets/img/home/lunbo2.png">-->
-    <!--</swiper-item>-->
   </swiper>
   <timep></timep>
   <works>
-    <works-item></works-item>
-    <works-item></works-item>
-    <works-item></works-item>
-    <works-item></works-item>
-    <works-item></works-item>
-    <works-item></works-item>
-    <works-item></works-item>
-    <works-item></works-item>
+    <works-item v-for="(item,index) in picture" :item="item"></works-item>
   </works>
   </div>
 </template>
@@ -43,7 +24,8 @@
     components: {WorksItem, Works, Timep, Swiper,SwiperItem},
     data(){
       return{
-        backgroundSrc:''
+        backgroundSrc:'',
+        picture:''
       }
     },
     created(){
@@ -51,6 +33,7 @@
         this.backgroundSrc=res
       })
       worksSee().then(res=>{
+        this.picture=res
         console.log(res);
       })
     }
