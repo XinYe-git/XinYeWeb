@@ -2,13 +2,18 @@
   <div class="order-item">
     <img src="~assets/img/home/order.png">
     <p>微信小程序开发</p>
-    <button>创建订单</button>
+    <button @click="created">创建订单</button>
   </div>
 </template>
 
 <script>
   export default {
-    name: "OrderItem"
+    name: "OrderItem",
+    methods:{
+      created(){
+        alert('请前往PC端进行操作')
+      }
+    }
   }
 </script>
 
@@ -25,10 +30,10 @@
   margin-top: 13px;
 }
 .order-item button{
-  width: 54px;
+  width: 70px;
   height: 21px;
   line-height: 21px;
-  font-size: 10px;
+  font-size: 8px;
   margin-top: 6px;
   background: #fde07f;
   border: none;

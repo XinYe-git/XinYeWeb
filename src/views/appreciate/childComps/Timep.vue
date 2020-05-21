@@ -6,7 +6,8 @@
 
 <script>
   export default {
-    name: "Timep"
+    name: "Timep",
+
   }
 </script>
 
@@ -14,6 +15,7 @@
 img{
   width: 639px;
   height: 35px;
-  margin-top: 13px;
+  margin-top: 23px;
+  margin-bottom: 10px;
 }
 </style>

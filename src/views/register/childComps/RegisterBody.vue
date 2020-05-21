@@ -174,4 +174,7 @@
     color: #2491ed;
     text-decoration:underline;
   }
+  .username,.useremail,.userpassword,.check,.register{
+    height: 120px;
+  }
 </style>

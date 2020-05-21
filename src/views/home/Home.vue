@@ -1,21 +1,10 @@
 <template>
   <div>
-  <swiper>
-    <swiper-item v-for="(item,index) in backgroundSrc">
+  <swiper :options="swiperOption" ref="mySwiper">
+    <swiperSlide v-for="(item,index) in backgroundSrc">
       <img :src="`http://jamkang.club/${item}`">
-    </swiper-item>
-    <!--<swiper-item>-->
-      <!--<img src="~assets/img/home/lunbo1.png">-->
-    <!--</swiper-item>-->
-    <!--<swiper-item>-->
-      <!--<img src="~assets/img/home/lunbo2.png">-->
-    <!--</swiper-item>-->
-    <!--<swiper-item>-->
-      <!--<img src="~assets/img/home/lunbo1.png">-->
-    <!--</swiper-item>-->
-    <!--<swiper-item>-->
-      <!--<img src="~assets/img/home/lunbo2.png">-->
-    <!--</swiper-item>-->
+    </swiperSlide>
+    <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
   <p class="order">我们专注创新网络发展 </p>
   <order>
@@ -34,7 +23,6 @@
 </template>
 
 <script>
-  import {Swiper,SwiperItem} from 'components/common/swiper'
   import Order from "./childComps/Order";
   import OrderItem from "./childComps/OrderItem";
   import Design from "./childComps/Design";
@@ -42,11 +30,31 @@
   import {backGround} from 'network/home'
   export default {
     name: "Home",
-    components: {DesignItem, Design, OrderItem, Order, Swiper,SwiperItem},
+    components: {DesignItem, Design, OrderItem, Order},
     data(){
       return{
-        backgroundSrc:''
+        backgroundSrc:'',
+        swiperOption:{
+          loop:true,
+          speed:1000,
+          pagination:{
+            el:".swiper-pagination",
+            type:'bullets'
+          },
+          autoplay:{
+            delay:3000,
+            disableOnInteraction:false
+          }
+        }
       }
+    },
+    computed:{
+      swiper(){
+        return this.$refs.mySwiper.swiper
+      }
+    },
+    mounted(){
+      // this.swiper.slideTo(3,1000,false)
     },
     created(){
       backGround().then(res=>{
@@ -61,11 +69,13 @@
 <style scoped>
   img{
     height: 260px;
+    width: 640px;
   }
   .order,.design{
     font-size: 17px;
     text-align: center;
-    margin-top: 21px;
+    margin-top: 5%;
     color: #000000;
+
   }
 </style>

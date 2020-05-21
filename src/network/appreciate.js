@@ -10,3 +10,18 @@ export function worksSee() {
     url:'wk/Works_con/WorksSeek',
   })
 }
+
+export function workgive(wid) {
+  return request({
+    url:'wk/Collect_Con/CollectAdd',
+    params:{
+      wid
+    }
+  })
+}
+
+    export function worksSeed() {
+      return request({
+        url:'wk/Collect_Con/UserCollect',
+      })
+    }

@@ -96,7 +96,7 @@
 <style scoped>
   .profile-date{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 50px;
   }
   .profile-date p{
     display: inline-block;
@@ -106,6 +106,7 @@
     text-align: center;
     border-radius: 20px;
     font-size: 22px;
+    margin-bottom: 30px;
     background: #fae59b;
   }
   .candel{

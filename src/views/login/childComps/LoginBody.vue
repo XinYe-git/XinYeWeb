@@ -78,6 +78,10 @@
 </script>
 
 <style scoped>
+  .useremail,.userpassword,.check,.register{
+    height: 120px;
+  }
+
   .xinyebar-user{
     text-align: center;
     height: 100px;

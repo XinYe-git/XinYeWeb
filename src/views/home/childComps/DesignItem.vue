@@ -23,8 +23,9 @@ img{
   height: 184px;
 }
   .design-item{
-     margin-bottom: 15px;
-    overflow: hidden;
+      margin-top: 5%;
+      margin-bottom: 15%;
+      overflow: hidden;
   }
 .design-item-left img{
   margin-right: 10px;

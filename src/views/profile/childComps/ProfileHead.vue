@@ -27,7 +27,9 @@
     },
     methods:{
       back(){
-        this.$router.back()
+        this.$router.push('/home')
+        this.$router.go(0)
+        // this.$router.back()
       }
     }
   }

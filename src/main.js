@@ -1,8 +1,15 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router/index'
-Vue.config.productionTip = false
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/css/swiper.css'
+import BaiduMap from 'vue-baidu-map'
 
+Vue.use(BaiduMap, {
+  ak: 'Gbyb8M7nwynpsP6aW7oGiRIlnKqtqsNu'
+});
+Vue.config.productionTip = false
+Vue.use(VueAwesomeSwiper)
 new Vue({
   render: h => h(App),
   router

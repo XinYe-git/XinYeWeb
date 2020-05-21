@@ -43,6 +43,22 @@
         this.cityShow=!this.cityShow
       },
       async admitContact(){
+
+        if (this.phone === '') {
+          alert('手机号不可为空');
+          return
+        } else {
+          if (this.phone !== '') {
+            if (!/^1[3456789]\d{9}$/.test(this.phone)) {
+              alert('请输入有效的手机号码');
+              return
+            }
+          }
+        }
+        if (this.content === '') {
+          alert('内容不可为空');
+          return
+        }
         let data=await getProblom(this.phone,this.content)
         if(data==='问题反馈添加成功'){
           alert('问题反馈添加成功')
@@ -115,12 +131,12 @@
   }
   li{
     width: 126px;
-    height: 30px;
+    height: 60px;
     text-align: center;
     color: black;
-    line-height: 30px;
+    line-height: 60px;
     background: #e8ecef;
-    font-size: 10px;
-    border-bottom: 1px solid #ee9;
+    font-size: 25px;
+    border-bottom: 1px solid dodgerblue;
   }
 </style>
